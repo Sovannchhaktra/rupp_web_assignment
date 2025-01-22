@@ -1,10 +1,10 @@
-import MenuJson from "./menus.json";
+import IconJson from "./icons.json";
 
 export default {
-  name: "Navbar",
+  name: "Footer",
   data() {
     return {
-      menu: MenuJson,
+      icons: IconJson,
     };
   },
   created() {},

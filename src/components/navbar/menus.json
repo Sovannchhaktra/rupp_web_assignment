@@ -1,0 +1,22 @@
+[
+  {
+    "title": "HOME",
+    "route": "/",
+    "isDroupDown": false
+  },
+  {
+    "title": "SHOP",
+    "route": "shop",
+    "isDroupDown": false
+  },
+  {
+    "title": "NEW",
+    "route": "new",
+    "isDroupDown": false
+  },
+  {
+    "title": "CONTACT",
+    "route": "contact",
+    "isDroupDown": false
+  }
+]
