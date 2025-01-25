@@ -1,5 +1,5 @@
 <div
-  class="w-full bg-slate-100 h-[90px] shadow-lg flex justify-center sticky z-50"
+  class="w-full bg-slate-100 h-[90px] shadow-md flex justify-center sticky top-0 z-50"
 >
   <div class="flex w-[80%] h-full justify-between items-center">
     <div class="cursor-pointer">
@@ -17,27 +17,23 @@
       </ul>
     </div>
     <div class="flex justify-between items-center gap-3">
-      <div class="relative">
-        <input
-          class="border border-slate-600 text-[15px] w-60 outline-none py-1 px-4 rounded-full"
-          type="text"
-          placeholder="Enter To Search"
+      <div>
+        <img
+          @click="isLanguage = !isLanguage"
+          v-if="isLanguage"
+          class="cursor-pointer border rounded-full"
+          width="25"
+          src="../../assets/icons/united-kingdom.png"
+          alt=""
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-          class="size-8 absolute top-0 -right-0 cursor-pointer"
-        >
-          <path
-            d="M5.94 8.06a1.5 1.5 0 1 1 2.12-2.12 1.5 1.5 0 0 1-2.12 2.12Z"
-          />
-          <path
-            fill-rule="evenodd"
-            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM4.879 4.879a3 3 0 0 0 3.645 4.706L9.72 10.78a.75.75 0 0 0 1.061-1.06L9.585 8.524A3.001 3.001 0 0 0 4.879 4.88Z"
-            clip-rule="evenodd"
-          />
-        </svg>
+        <img
+          @click="isLanguage = !isLanguage"
+          v-else
+          class="cursor-pointer border rounded-full"
+          width="25"
+          src="../../assets/icons/cambodia.png"
+          alt=""
+        />
       </div>
       <div class="relative">
         <svg
@@ -59,7 +55,7 @@
           >1</span
         >
       </div>
-      <div>
+      <div class="relative group">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -74,6 +70,23 @@
             d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
           />
         </svg>
+        <div
+          class="absolute right-0 top-[2rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+        >
+          <ul
+            class="font-roboto flex flex-col gap-3 bg-slate-100 shadow rounded w-[10rem] px-5 py-3 mt-8 z-40"
+          >
+            <li class="cursor-pointer hover:text-yellow-500">
+              <router-link to="/login">Login</router-link>
+            </li>
+            <li class="cursor-pointer hover:text-yellow-500">
+              <router-link to="/signup">Create Account</router-link>
+            </li>
+            <li class="cursor-pointer hover:text-yellow-500">
+              <router-link to="/profile">Profile</router-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

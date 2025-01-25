@@ -1,0 +1,185 @@
+<div class="w-full">
+  <div class="flex items-center gap-2">
+    <router-link to="/" class="flex gap-2 items-center">
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 text-slate-500"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          />
+        </svg>
+      </div>
+      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home /</p>
+    </router-link>
+    <p class="text-[1.2rem] font-roboto font-medium">Create Account</p>
+  </div>
+  <div class="mt-7">
+    <span class="text-xl font-roboto border-b-2 font-medium">Persional</span>
+    <form class="mb-5">
+      <div class="grid grid-cols-2">
+        <span class="pt-4 pr-3">
+          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
+            >First Name<span class="text-red-600">*</span></label
+          >
+          <input
+            type="text"
+            name=""
+            id="code"
+            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
+            placeholder="First Name"
+          />
+          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
+            Code is required.
+          </div> -->
+        </span>
+        <span class="pt-4 pr-3">
+          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
+            >Last Name<span class="text-red-600">*</span></label
+          >
+          <input
+            type="text"
+            name=""
+            id="code"
+            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
+            placeholder="Last Name"
+          />
+          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
+              Code is required.
+            </div> -->
+        </span>
+      </div>
+      <div class="grid grid-cols-2">
+        <span class="pt-4 pr-3">
+          <label for="gender" class="mb-2 font-medium font-roboto text-gray-700"
+            >Gender<span class="text-red-600">*</span></label
+          >
+          <select
+            required
+            id="gender"
+            class="select-gray mt-1 px-5 py-2 w-full font-roboto text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+          >
+            <option selected value="" disabled class="text-gray-400">
+              Select Gender
+            </option>
+            <option value="MALE" class="text-black">Male</option>
+            <option value="FEMALE" class="text-black">Female</option>
+          </select>
+          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
+              Gender is required.
+            </div> -->
+        </span>
+        <span class="pt-4 pr-3">
+          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
+            >Phone Number<span class="text-red-600">*</span></label
+          >
+          <input
+            type="text"
+            name=""
+            id="code"
+            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
+            placeholder="Phone Number"
+          />
+          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
+              Code is required.
+            </div> -->
+        </span>
+      </div>
+      <div class="grid grid-cols-1">
+        <span class="pt-4 pr-3">
+          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
+            >Email<span class="text-red-600">*</span></label
+          >
+          <input
+            type="text"
+            name=""
+            id="code"
+            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
+            placeholder="Email"
+          />
+          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
+              Code is required.
+            </div> -->
+        </span>
+      </div>
+      <div class="grid grid-cols-2">
+        <span class="pt-4 pr-3">
+          <label for="gender" class="mb-2 font-medium font-roboto text-gray-700"
+            >Country<span class="text-red-600">*</span></label
+          >
+          <select
+            required
+            id="gender"
+            class="select-gray mt-1 px-5 py-2 w-full font-roboto text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+          >
+            <option selected value="" disabled class="text-gray-400">
+              Select Country
+            </option>
+            <option value="" class="text-black">Cambodain</option>
+            <option value="" class="text-black">Thailand</option>
+            <option value="" class="text-black">Vietnam</option>
+            <option value="" class="text-black">Korean</option>
+          </select>
+          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
+                Gender is required.
+              </div> -->
+        </span>
+        <span class="pt-4 pr-3">
+          <label for="gender" class="mb-2 font-medium font-roboto text-gray-700"
+            >City/Province<span class="text-red-600">*</span></label
+          >
+          <select
+            required
+            id="gender"
+            class="select-gray mt-1 px-5 py-2 w-full font-roboto text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+          >
+            <option selected value="" disabled class="text-gray-400">
+              Select City/Province
+            </option>
+            <option value="" class="text-black">Kampong Thom</option>
+            <option value="" class="text-black">Kampong Chhnang</option>
+            <option value="" class="text-black">Kep</option>
+            <option value="" class="text-black">Kampong Speu</option>
+          </select>
+          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
+                Gender is required.
+              </div> -->
+        </span>
+      </div>
+
+      <!-- Button Submit -->
+      <div class="flex float-end gap-1 font-SegoeUI font-semibold">
+        <span class="pt-4 pr-3">
+          <router-link to="/">
+            <button
+              class="w-full rounded-md py-2 px-3 text-center bg-gray-300 hover:bg-red-400 hover:text-white"
+            >
+              Cancel
+            </button>
+          </router-link>
+        </span>
+
+        <span class="pt-4 pr-3">
+          <button
+            class="w-full text-white bg-blue-700 hover:bg-yel-500 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
+          >
+            Create Account
+          </button>
+          <!-- <button
+            v-else
+            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 text-center"
+          >
+            Loading...
+          </button> -->
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

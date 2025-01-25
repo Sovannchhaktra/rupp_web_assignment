@@ -1,7 +1,7 @@
 <template>
   <main id="app" class="w-100 h-auto flex flex-col items-center">
     <Navbar />
-    <div class="w-[80%] h-auto mt-5 m-5">
+    <div class="w-[80%] h-auto mt-7 m-5">
       <RouterView />
     </div>
     <Footer />
