@@ -3,21 +3,23 @@
     <!-- New Products Section -->  
     <div class="flex-1 p-0">  
       <h2 class="mb-4 text-2xl font-bold">NEW PRODUCTS</h2>  
-      <div class="grid grid-cols-3 gap-4">  
-        <div v-for="product in newProducts" :key="product.id" class="bg-gray-100 p-2 rounded-lg relative">  
-          <div class="bg-yellow-500 w-24 text-center absolute top-4 left-3 promotion rounded" style="height: 3rem;z-index: 1111;">  
-            <p class="text-white font-semibold mt-2">Promotion</p>  
-          </div>  
-          <div class="img">  
-            <img class="w-full rounded-t-lg hover:scale-105 transition-transform duration-300 ease-in-out" :src="product.image" alt="Product Image" />  
-          </div>  
+      <div class="grid grid-cols-3 gap-4 ">  
+        <div v-for="product in newProducts" :key="product.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
+          <div class="relative"> 
+            <div class="bg-yellow-500 w-[40%] text-center absolute promotion rounded z-10" style="height: 3rem;">
+              <p class="text-white font-semibold mt-2">Promotion</p>
+            </div>
+            <div class="img  overflow-hidden">
+              <img class="w-full rounded-t-lg hover:scale-105 transition-transform duration-300 ease-in-out" :src="product.image" alt="Product Image" />
+            </div>
+          </div> 
           <div class="p-2">  
-            <div class="flex gap-3">  
+            <div class="flex gap-3 mt-3">  
               <del class="text-red-500">${{ product.originalPrice }} (USA)</del>  
-              <p class="font-bold text-xl">${{ product.salePrice }} (USA)</p>  
+              <p class="font-bold">${{ product.salePrice }} (USA)</p>  
             </div>  
-            <p class="text-lg font-medium">{{ product.name }}</p>  
-            <div class="flex gap-1 text-yellow-500 hover:cursor-pointer">  
+            <p class="text-lg font-medium my-1">{{ product.name }}</p>  
+            <div class="flex gap-1 text-yellow-500 hover:cursor-pointer text-xl">  
               <span v-for="star in Array.from({ length: product.rating })" :key="star" class="text-yellow-500">&#9733;</span>  
               <span v-for="star in Array.from({ length: 5 - product.rating })" :key="star" class="text-gray-300">&#9734;</span>  
             </div>  
@@ -35,7 +37,7 @@
       </ul>  
 
       <h2 class="text-xl font-bold mt-10">PROMOTION</h2>  
-      <button class="btn border border-red-400 rounded text-red-400 p-1 hover:bg-red-500 hover:text-white mb-5 mt-3">Promotion</button>  
+      <button class="btn border border-red-400 rounded text-red-400 p-1 hover:bg-red-500 ease-in-out transition-transform duration-1000 hover:text-white mb-5 mt-3 ">Promotion</button>  
 
       <h2 class="text-xl font-bold mt-5">PRICE</h2>  
       <div class="flex gap-2 mt-3">  
@@ -48,20 +50,22 @@
   <div class="mb-5">  
     <h2 class="mb-4 text-2xl font-bold">RELATED PRODUCTS</h2>  
     <div class="grid grid-cols-4 gap-3">  
-      <div v-for="relatedProduct in relatedProducts" :key="relatedProduct.id" class="bg-gray-100 p-2 rounded-lg relative">  
-        <div class="bg-yellow-500 w-24 text-center absolute top-4 left-3 promotion rounded" style="height: 3rem;z-index: 1111;">  
-          <p class="text-white font-semibold mt-2">Promotion</p>  
-        </div>  
-        <div class="img">  
-          <img class="w-full rounded-t-lg hover:scale-105 transition-transform duration-300 ease-in-out" :src="relatedProduct.image" alt="Product Image" />  
-        </div>  
+      <div v-for="relatedProduct in relatedProducts" :key="relatedProduct.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
+        <div class="relative">
+          <div class="bg-yellow-500 w-[40%] text-center absolute promotion rounded z-10" style="height: 3rem;">
+            <p class="text-white font-semibold mt-2">Promotion</p>
+          </div>
+          <div class="img overflow-hidden">
+            <img class="w-full rounded-t-lg hover:scale-105 transition-transform duration-300 ease-in-out" :src="relatedProduct.image" alt="Product Image"/>
+          </div>
+        </div>
         <div class="p-2">  
-          <div class="flex gap-3">  
+          <div class="flex gap-3 mt-3">  
             <del class="text-red-500">${{ relatedProduct.originalPrice }} (USA)</del>  
-            <p class="font-bold text-xl">${{ relatedProduct.salePrice }} (USA)</p>  
+            <p class="font-bold">${{ relatedProduct.salePrice }} (USA)</p>  
           </div>  
-          <p class="text-lg font-medium">{{ relatedProduct.name }}</p>  
-          <div class="flex gap-1 text-yellow-500 hover:cursor-pointer">  
+          <p class="text-lg font-medium my-1">{{ relatedProduct.name }}</p>  
+          <div class="flex gap-1 text-yellow-500 hover:cursor-pointer text-xl">  
             <span v-for="star in Array.from({ length: relatedProduct.rating })" :key="star" class="text-yellow-500">&#9733;</span>  
             <span v-for="star in Array.from({ length: 5 - relatedProduct.rating })" :key="star" class="text-gray-300">&#9734;</span>  
           </div>  
