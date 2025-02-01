@@ -5,7 +5,7 @@
       <h2 class="mb-4 text-2xl font-bold">NEW PRODUCTS</h2>  
       <div class="grid grid-cols-3 gap-4">  
         <div v-for="product in newProducts" :key="product.id" class="bg-gray-100 p-2 rounded-lg relative">  
-          <div class="bg-yellow-500 w-24 text-center absolute top-4 left-3 promotion rounded" style="height: 3rem;">  
+          <div class="bg-yellow-500 w-24 text-center absolute top-4 left-3 promotion rounded" style="height: 3rem;z-index: 1111;">  
             <p class="text-white font-semibold mt-2">Promotion</p>  
           </div>  
           <div class="img">  
@@ -17,7 +17,7 @@
               <p class="font-bold text-xl">${{ product.salePrice }} (USA)</p>  
             </div>  
             <p class="text-lg font-medium">{{ product.name }}</p>  
-            <div class="flex gap-1 text-yellow-500">  
+            <div class="flex gap-1 text-yellow-500 hover:cursor-pointer">  
               <span v-for="star in Array.from({ length: product.rating })" :key="star" class="text-yellow-500">&#9733;</span>  
               <span v-for="star in Array.from({ length: 5 - product.rating })" :key="star" class="text-gray-300">&#9734;</span>  
             </div>  
@@ -61,7 +61,7 @@
             <p class="font-bold text-xl">${{ relatedProduct.salePrice }} (USA)</p>  
           </div>  
           <p class="text-lg font-medium">{{ relatedProduct.name }}</p>  
-          <div class="flex gap-1 text-yellow-500">  
+          <div class="flex gap-1 text-yellow-500 hover:cursor-pointer">  
             <span v-for="star in Array.from({ length: relatedProduct.rating })" :key="star" class="text-yellow-500">&#9733;</span>  
             <span v-for="star in Array.from({ length: 5 - relatedProduct.rating })" :key="star" class="text-gray-300">&#9734;</span>  
           </div>  
