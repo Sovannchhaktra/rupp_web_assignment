@@ -22,8 +22,8 @@
     <p class="text-[1.2rem] font-roboto font-medium">Sign In Account</p>
   </div>
   <div class="mt-9">
-    <span class="text-xl font-roboto border-b-2 font-medium">Persional</span>
-    <form class="mb-8 mt-6">
+    <span class="text-xl font-roboto border-b-2 font-medium">{{title}}</span>
+    <form v-if="!isNext" class="mb-8 mt-6">
       <div class="grid grid-cols-2">
         <span class="pt-4 pr-3">
           <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
@@ -116,6 +116,7 @@
 
         <span class="pt-4 pr-3">
           <button
+            @click="isNext = true"
             class="w-full text-white bg-blue-700 hover:bg-yel-500 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
           >
             Login
@@ -128,6 +129,12 @@
           </button> -->
         </span>
       </div>
+    </form>
+
+    <!-- OTP -->
+
+    <form class="mb-8 mt-6" v-if="isNext">
+      <div class="grid grid-cols-2"><button label="Submit" /></div>
     </form>
   </div>
 </div>
