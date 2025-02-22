@@ -1,3 +1,6 @@
+
+import InputText from 'primevue/inputtext';
+
 export default {
   name: "ListCart",
   data() {
@@ -5,4 +8,7 @@ export default {
       products: 4,
     };
   },
+  components: {
+    InputText
+  }
 };

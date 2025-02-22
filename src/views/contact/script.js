@@ -1,7 +1,12 @@
 import Editor from "@tinymce/tinymce-vue";
+import InputText from 'primevue/inputtext';
+import FloatLabel from "primevue/floatlabel";
+
 export default {
   components: {
     Editor,
+    FloatLabel,
+    InputText,
   },
   data() {
     return {

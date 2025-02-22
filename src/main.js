@@ -2,9 +2,11 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store/store";
-import "./style.css";
+import PrimeVue from 'primevue/config';
+import Aura from '@primevue/themes/aura';
 
-import PrimeVue from "primevue/config";
+import "./style.css";
+import "./assets/main.css"
 
 const app = createApp(App);
 
@@ -12,6 +14,11 @@ const app = createApp(App);
 app.use(router);
 // Use the vuex
 app.use(store);
-app.use(PrimeVue);
+// Use the prime
+app.use(PrimeVue, {
+     theme: {
+         preset: Aura
+     }
+ });
 
 app.mount("#app");

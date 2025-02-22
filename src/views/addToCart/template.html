@@ -19,7 +19,7 @@
       </div>
       <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home /</p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium">Products</p>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Products</p>
   </div>
   <div class="w-full flex gap-5 mt-5">
     <div class="bg-white h-fit w-[70%] p-4 rounded-md shadow-md">
@@ -42,16 +42,14 @@
                 >
               </p>
             </div>
-            <span class="font-roboto font-bold">$64.95</span>
+            <span class="font-roboto font-bold text-slate-900">$64.95</span>
           </div>
           <div class="flex justify-between font-roboto text-[13px]">
-            <span class="bg-white border rounded-md py-1 px-7">XL</span>
-            <span class="bg-white border rounded-md py-1 px-7">Blue</span>
-            <input
-              class="border outline-none rounded-md py-0 w-20 text-center"
-              type="number"
-              value="2"
-            />
+            <span class="bg-white border rounded-md py-1 px-7 text-slate-900">XL</span>
+            <span class="bg-white border rounded-md py-1 px-7 text-slate-900">Blue</span>
+            
+            <InputText id="on_label" v-model="value3" type="number"
+            value="2" class="border outline-none rounded-md py-0 w-20 text-center h-7" />
             <div
               class="flex gap-1 items-center cursor-pointer py-1 px-2 border bg-blue-100 rounded-md"
             >
@@ -59,14 +57,14 @@
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-5"
+                class="size-5 text-blue-500"
               >
                 <path
                   d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"
                 />
               </svg>
 
-              <span class="font-medium">Save</span>
+              <span class="font-medium text-slate-700">Save</span>
             </div>
             <div
               class="flex items-center gap-1 justify-center cursor-pointer py-1 px-2 border bg-red-100 rounded-md"
@@ -75,7 +73,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-5"
+                class="size-5 text-red-500"
               >
                 <path
                   fill-rule="evenodd"
@@ -83,18 +81,18 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="font-medium">Delete</span>
+              <span class="font-medium text-slate-700">Delete</span>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="bg-white shadow-md h-fit w-[30%] rounded-md p-4">
-      <span class="font-roboto font-medium">Delivery</span>
+      <span class="font-roboto font-medium text-slate-900">Delivery</span>
       <div
-        class="bg-gray-200 w-48 flex gap-2 p-1 px-1 rounded-md font-roboto mt-5"
+        class="bg-gray-400 w-48 flex gap-2 p-1 px-1 rounded-md font-roboto mt-5"
       >
-        <span class="text-center bg-white shadow-md py-1 px-2 rounded-md"
+        <span class="text-center bg-white shadow-md py-1 px-2 rounded-md text-slate-900"
           >Free</span
         >
         <span class="text-center py-1 px-2">Express: $9.99</span>
@@ -106,14 +104,9 @@
       </div>
       <hr class="mt-6" />
       <div class="mt-6 flex items-center">
-        <input
-          class="border outline-none rounded-l-md py-2 px-4 w-60 text-[15px]"
-          type="text"
-          placeholder="Promocode"
-          value=""
-        />
+        <InputText id="on_label" v-model="value3" type="number" placeholder="Promocode" class="border outline-none rounded-l-md py-1 px-4 w-60 text-[15px] d" />
         <button
-          class="bg-gray-100 border py-2 px-2 rounded-r-md font-roboto text-[15px]"
+          class="bg-gray-300 border border-gray-500 text-slate-900 py-2 px-2 rounded-r-md font-roboto text-[15px]"
         >
           Apply
         </button>
@@ -122,14 +115,14 @@
         <p class="text-gray-400 font-roboto text-sm mt-1">20% off Discount</p>
       </div>
       <hr class="mt-6" />
-      <div class="mt-6 mb-6 font-roboto text-[15px] flex flex-col gap-2">
+      <div class="mt-6 mb-6 font-roboto text-[15px] flex flex-col gap-2 text-slate-800">
         <div class="flex justify-between">
           <span>Subtotal</span>
           <span>$00.00</span>
         </div>
         <div class="flex justify-between">
           <span>Discount</span>
-          <span>(20%) - $16.19</span>
+          <span class="flex"><p class="text-red-500">(20%)</p> - $16.19</span>
         </div>
         <div class="flex justify-between">
           <span>Delivery</span>
@@ -142,7 +135,7 @@
         <hr class="mt-5" />
         <div class="flex justify-between mt-5">
           <span>Total</span>
-          <span>$78.76</span>
+          <span class="text-blue-500 font-medium" >$78.76</span>
         </div>
       </div>
       <button

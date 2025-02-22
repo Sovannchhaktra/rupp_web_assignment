@@ -1,4 +1,7 @@
-import Button from "primevue/button";
+import InputOtp from 'primevue/inputotp';
+import InputText from 'primevue/inputtext';
+import FloatLabel from "primevue/floatlabel";
+
 export default {
   name: "SignIn",
 
@@ -6,10 +9,14 @@ export default {
     return {
       isPassword: true,
       isNext: false,
-      title: "Persional",
+      title: "Persional"
     };
   },
-  components: { Button },
+  components: {
+    InputOtp,
+    FloatLabel,
+    InputText,
+  },
 
   updated() {
     this.updateTitle();
@@ -20,5 +27,13 @@ export default {
         this.title = "Please Enter OTP";
       }
     },
+    validateOTP() {
+      if (!/^\d*$/.test(value.value)) {
+        errorMessage.value = 'Only numbers are allowed';
+        value.value = value.value.replace(/\D/g, '');
+      } else {
+        errorMessage.value = '';
+      }
+    }
   },
 };
