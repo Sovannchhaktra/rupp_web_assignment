@@ -23,4 +23,8 @@ import {ref,computed} from 'vue'
 </template>
 
 
-<style></style>
+<style>
+body {
+  background-color: white;
+}
+</style>

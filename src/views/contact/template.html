@@ -19,15 +19,15 @@
       </div>
       <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home /</p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium">Contact Us</p>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Contact Us</p>
   </div>
   <div class="w-full flex gap-20 mt-8">
     <div class="w-[30%]">
-      <p class="font-medium text-xl font-roboto">FOLLOW US</p>
+      <p class="font-medium text-xl font-roboto text-slate-900">FOLLOW US</p>
       <ul class="mt-6 flex flex-col gap-6">
         <li v-for="(items, index) in followUs">
           <router-link
-            class="flex items-center gap-4 bg-slate-50 hover:bg-slate-100 p-2 rounded-sm"
+            class="flex items-center gap-4 bg-slate-200 text-slate-900 hover:bg-slate-100 p-2 rounded-sm"
             to="#"
           >
             <img
@@ -41,89 +41,44 @@
       </ul>
     </div>
     <div class="w-[70%]">
-      <p class="font-medium text-xl font-roboto">FEEDBACK</p>
+      <p class="font-medium text-xl text-slate-900 font-roboto">FEEDBACK</p>
       <form>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 mb-5">
           <span class="pt-4 pr-3">
-            <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-              >First Name<span class="text-red-600">*</span></label
-            >
-            <input
-              type="text"
-              name=""
-              id="firstName"
-              class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-              placeholder="First Name"
-            />
-            <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+            <FloatLabel variant="on">
+              <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+              <label for="on_label">First Name<span class="text-red-600">*</span></label>
+          </FloatLabel>
           </span>
           <span class="pt-4 pr-3">
-            <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-              >Last Name<span class="text-red-600">*</span></label
-            >
-            <input
-              type="text"
-              name=""
-              id=""
-              class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-              placeholder="Last Name"
-            />
-            <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+            <FloatLabel variant="on">
+              <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+              <label for="on_label">Last Name<span class="text-red-600">*</span></label>
+          </FloatLabel>
           </span>
         </div>
-        <div class="grid grid-cols-1">
+        <div class="grid grid-cols-1 mb-5">
           <span class="pt-4 pr-3">
-            <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-              >Email<span class="text-red-600">*</span></label
-            >
-            <input
-              type="text"
-              name=""
-              id=""
-              class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-              placeholder="Email"
-            />
-            <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+            <FloatLabel variant="on">
+              <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+              <label for="on_label">Email<span class="text-red-600">*</span></label>
+          </FloatLabel>
           </span>
         </div>
-        <div class="grid grid-cols-1">
+        <div class="grid grid-cols-1 mb-5">
           <span class="pt-4 pr-3">
-            <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-              >Phone Number</label
-            >
-            <input
-              type="text"
-              name=""
-              id=""
-              class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-              placeholder="Phone Number(optional)"
-            />
-            <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+            <FloatLabel variant="on">
+              <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+              <label for="on_label">Phone Number<span class="text-red-600">*</span></label>
+          </FloatLabel>
           </span>
         </div>
-        <div class="grid grid-cols-1">
+        <div class="grid grid-cols-1 mb-5">
           <span class="pt-4 pr-3">
-            <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-              >Address</label
-            >
-            <input
-              type="text"
-              name=""
-              id=""
-              class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-              placeholder="Address(optional)"
-            />
-            <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+            <FloatLabel variant="on">
+              <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+              <label for="on_label">Address</label>
+          </FloatLabel>
           </span>
         </div>
         <div class="grid grid-cols-1">
