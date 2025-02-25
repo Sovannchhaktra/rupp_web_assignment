@@ -1,0 +1,76 @@
+<div class="flex items-center gap-2">
+    <router-link to="/" class="flex gap-2 items-center">
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 text-slate-500"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          />
+        </svg>
+      </div>
+      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home / </p>
+    </router-link>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Product Detail</p>
+  </div>
+<div class="flex px-20 mt-5">
+    <div class="w-full md:w-1/2 p-0 flex justify-center">
+        <img class="w-3/4" src="https://placehold.co/270x400" alt="T-shirt">
+    </div>
+    <div class="w-full md:w-1/2 p-0">
+        <div class="w-full p-4">
+            <h1 class="text-black text-2xl font-bold mb-3">T-shirt</h1>
+
+            <!-- Price -->
+            <div class="mb-4">
+                <h2 class="text-lg font-semibold mb-2 text-black">PRICE</h2>
+                <div class="ml-5">
+                    <p class="text-danger line-through text-lg text-red-500">- $95.90 (US)</p>
+                    <p class="text-green-600 text-lg mt-1">- $90.95 (US)</p>
+                </div>
+            </div>
+
+            <!-- Category -->
+            <div class="mb-4">
+                <h2 class="text-lg font-semibold mb-2 text-black">CATEGORY</h2>
+                <p class="text-gray-500 text-lg ml-5">- Woman</p>
+            </div>
+
+            <!-- Color -->
+            <div class="mb-4">
+                <h2 class="text-lg font-semibold mb-2 text-black">COLOR</h2>
+                <p class="text-gray-500 text-sm ml-5">Red, Blue, Yellow</p>
+            </div>
+
+            <!-- Size -->
+            <div class="mb-4">
+                <h2 class="text-lg font-semibold mb-2 text-black">SIZE</h2>
+                <p class="text-gray-500 text-sm ml-5">XXL, XL, L, S, XS</p>
+            </div>
+
+            <!-- Buy Section -->
+            <div class="mb-5">
+                <h2 class="text-lg font-semibold mb-2 text-black">BUY</h2>
+                <div class="flex items-center gap-2">
+                    <input type="number" value="1" class="w-20 text-center border border-gray-300 p-2 rounded-md">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div>
+                <h2 class="text-lg font-semibold mb-2 text-black">DESCRIPTION</h2>
+                <p class="text-gray-500 text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eligendi dolore at modi id cupiditate ipsa, iusto explicabo veritatis magni!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

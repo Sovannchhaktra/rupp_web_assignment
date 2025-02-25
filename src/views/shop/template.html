@@ -2,9 +2,9 @@
   <div class="flex mb-5">  
     <!-- New Products Section -->  
     <div class="flex-1 p-0">  
-      <h2 class="mb-4 text-2xl font-bold">NEW PRODUCTS</h2>  
+      <h2 class="mb-4 text-2xl font-bold text-black">NEW PRODUCTS</h2>  
       <div class="grid grid-cols-3 gap-4 ">  
-        <div v-for="product in newProducts" :key="product.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
+        <router-link to="/product/detail/1" v-for="product in newProducts" :key="product.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
           <div class="relative"> 
             <div class="bg-yellow-500 w-[40%] text-center absolute promotion rounded z-10" style="height: 3rem;">
               <p class="text-white font-semibold mt-2">Promotion</p>
@@ -15,31 +15,31 @@
           </div> 
           <div class="p-2">  
             <div class="flex gap-3 mt-3">  
-              <del class="text-red-500">${{ product.originalPrice }} (USA)</del>  
-              <p class="font-bold">${{ product.salePrice }} (USA)</p>  
+              <del class="text-red-500">${{ product.originalPrice }} (USD)</del>  
+              <p class="font-bold text-black">${{ product.salePrice }} (USD)</p>  
             </div>  
-            <p class="text-lg font-medium my-1">{{ product.name }}</p>  
+            <p class="text-lg font-medium my-1 text-black">{{ product.name }}</p>  
             <div class="flex gap-1 text-yellow-500 hover:cursor-pointer text-xl">  
               <span v-for="star in Array.from({ length: product.rating })" :key="star" class="text-yellow-500">&#9733;</span>  
               <span v-for="star in Array.from({ length: 5 - product.rating })" :key="star" class="text-gray-300">&#9734;</span>  
             </div>  
           </div>  
-        </div>  
+        </router-link>  
       </div>  
     </div>  
     <div class="w-1/4 p-5">  
-      <h2 class="text-xl font-bold">CATEGORIES</h2>  
+      <h2 class="text-xl font-bold text-black">CATEGORIES</h2>  
       <ul class="menu-category mb-5 font-bold">  
-        <li class="my-3 px-2">Man</li>  
+        <li class="my-3 px-2 text-black">Man</li>  
         <li class="bg-yellow-500 rounded py-3 px-2 text-white">Boy</li>  
-        <li class="my-3">Woman</li>  
+        <li class="my-3 text-black">Woman</li>  
         <li class="bg-yellow-500 rounded py-3 px-2 text-white">Girl</li>  
       </ul>  
 
-      <h2 class="text-xl font-bold mt-10">PROMOTION</h2>  
+      <h2 class="text-xl font-bold mt-10 text-black">PROMOTION</h2>  
       <button class="btn border border-red-400 rounded text-red-400 p-1 hover:bg-red-500 ease-in-out transition-transform duration-1000 hover:text-white mb-5 mt-3 ">Promotion</button>  
 
-      <h2 class="text-xl font-bold mt-5">PRICE</h2>  
+      <h2 class="text-xl font-bold mt-5 text-black">PRICE</h2>  
       <div class="flex gap-2 mt-3">  
         <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">Low Price</button>  
         <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">High Price</button>  
@@ -48,7 +48,7 @@
   </div>  
 
   <div class="mb-5">  
-    <h2 class="mb-4 text-2xl font-bold">RELATED PRODUCTS</h2>  
+    <h2 class="mb-4 text-2xl font-bold text-black">RELATED PRODUCTS</h2>  
     <div class="grid grid-cols-4 gap-3">  
       <div v-for="relatedProduct in relatedProducts" :key="relatedProduct.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
         <div class="relative">
@@ -62,9 +62,9 @@
         <div class="p-2">  
           <div class="flex gap-3 mt-3">  
             <del class="text-red-500">${{ relatedProduct.originalPrice }} (USA)</del>  
-            <p class="font-bold">${{ relatedProduct.salePrice }} (USA)</p>  
+            <p class="font-bold text-black">${{ relatedProduct.salePrice }} (USA)</p>  
           </div>  
-          <p class="text-lg font-medium my-1">{{ relatedProduct.name }}</p>  
+          <p class="text-lg font-medium my-1 text-black">{{ relatedProduct.name }}</p>  
           <div class="flex gap-1 text-yellow-500 hover:cursor-pointer text-xl">  
             <span v-for="star in Array.from({ length: relatedProduct.rating })" :key="star" class="text-yellow-500">&#9733;</span>  
             <span v-for="star in Array.from({ length: 5 - relatedProduct.rating })" :key="star" class="text-gray-300">&#9734;</span>  
