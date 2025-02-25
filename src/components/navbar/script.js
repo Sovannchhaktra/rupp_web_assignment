@@ -10,10 +10,4 @@ export default {
   },
   created() {},
   methods: {},
-  mounted() {
-    console.log(this.$route.path)
-    if (this.$route.path === '/product/detail') {
-      this.$router.replace('/');
-    }
-  }
 };
