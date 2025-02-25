@@ -52,6 +52,7 @@ body {
     margin-bottom: 20px;
     border-radius: 5px;
     text-align: center;
+    overflow: hidden;
 }
 .product-card img {
     width: 100%;
@@ -78,6 +79,7 @@ body {
     padding: 5px;
     background-color: gold;
     color: white;
+    z-index: 111111;
 }
 .detail{
     text-align: left;
@@ -87,8 +89,16 @@ body {
     padding: 0;
     font-size: 14px;
 }
+.img{
+    overflow: hidden;
+}
 .img img {
     width: 100%;
+}
+
+.img>img:hover{
+    scale: 1.1;
+    transition: ease-in-out scale 0.2s;
 }
 .original-price {
     color: #e74c3c;
