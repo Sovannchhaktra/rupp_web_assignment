@@ -27,8 +27,15 @@ body {
 }
 .container {
     padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
     width: 100%;
-    
+    align-items: center;
+    background-color: white;
+}
+.font-bold{
+    padding: 20px;
+    font-size: 30px;
 }
 .products {
     flex: 3;
@@ -43,7 +50,6 @@ body {
 .product-card {
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
 }
@@ -52,70 +58,25 @@ body {
     height: auto;
 }
 .product-card .price {
-    color: green;
-    /* text-decoration: line-through; */
+    color: black;
 }
 .product-card .product-name{
     color: #000;
     width: 100px;
 }
 .product-card .discounted-price {
-    color: green;
+    color: black;
     font-weight: bold;
 }
 .product-card .rating {
     color: gold;
-}
-.sidebar .categories, .sidebar .promotion, .sidebar .price {
-    margin-bottom: 20px;
-}
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #bda000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px;
-}
-.button:hover{
-    background-color: #f4f4f4;
-    color: black;
-}
-.sidebar .categories {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    cursor: pointer;
-}
-.sidebar .promotion {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    cursor: pointer;
-}
-.sidebar .price {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    cursor: pointer;
 }
 .pro{
     position: relative;
     position: absolute;
     width: 90px;
     padding: 5px;
-    background-color: #bda000;
+    background-color: gold;
     color: white;
 }
 .detail{
@@ -134,15 +95,16 @@ body {
     text-decoration: line-through;
 }
 .product-price {
-    color: #27ae60;
+    color: black;
     font-size: 14px;
     margin-left: 10px;
 }
 .fs-4 {
-    font-size: 1.5rem;
+    color: black;
+    font-size: 24px;
 }
 .customer-rating {
-    font-size: 14px;
+    font-size: 1.5rem;
     color: #f39c12;
     margin-left: 0;
 }
