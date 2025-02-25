@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/views/product/style.css">
-    <title>Online Store</title>
-</head>
-<div>
-    <p class="font-bold text-xl">Product Page</p>
-</div>
-<body>
-     <div id="app" class="container">
-          <div id="app">
-            <div v-for="category in categories" :key="category.name">
-              <h2>{{ category.name }}</h2>
-              <div v-for="product in category.products" :key="product.name">
-                <img :src="product.image" :alt="product.name" />
-                <p>{{ product.name }}</p>
-                <p>{{ product.price | currency }}</p>
-                <p v-if="product.promotion">On Promotion!</p>
-                <p>Rating: {{ product.rating }} stars</p>
-              </div>
-            </div>
-          </div>
-          <div class="products" v-for="(category, index) in categories" :key="index">
-            <h2>{{ category.name }}</h2>
-            <div class="product-card" v-for="(product, pIndex) in category.products" :key="pIndex">
-                <div class="product" v-if="product">Product</div>
-                <img :src="product.image" :alt="product.name">
-                <div class="price">${{ product.price }}</div>
-                <div class="product-name">{{ product.name }}</div>
-                <div class="rating">{{ '★'.repeat(product.rating) }}</div>
-            </div>
-          </div>
-          <div class="row mb-5">
-               <h2 class="mb-4">ALL PRODUCTS</h2>
+     <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/src/views/product/style.css">
+     <title>Online Store</title>
+     </head>
+     <div>
+     <p class="font-bold text-xl">Product Page</p>
+     </div>
+     <body>
+          <div id="app" class="container">
+               <div id="app">
+               <div v-for="category in categories" :key="category.name">
+               <h2>{{ category.name }}</h2>
+               <div v-for="product in category.products" :key="product.name">
+                    <img :src="product.image" :alt="product.name" />
+                    <p>{{ product.name }}</p>
+                    <p>{{ product.price | currency }}</p>
+                    <p v-if="product.promotion">On Promotion!</p>
+                    <p>Rating: {{ product.rating }} stars</p>
+               </div>
+               </div>
+               </div>
+               <div class="products" v-for="(category, index) in categories" :key="index">
+               <h2>{{ category.name }}</h2>
+               <div class="product-card" v-for="(product, pIndex) in category.products" :key="pIndex">
+                    <div class="product" v-if="product">Product</div>
+                    <img :src="product.image" :alt="product.name">
+                    <div class="price">${{ product.price }}</div>
+                    <div class="product-name">{{ product.name }}</div>
+                    <div class="rating">{{ '★'.repeat(product.rating) }}</div>
+               </div>
+               </div>
+               <div class="row mb-5">
+                    <h2 class="mb-4">ALL PRODUCTS</h2>
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
                          <div class="cards w-100 bg-light p-1 position-relative">
                               <div class="bg-warning w-50 text-center position-absolute top-1 left-1 promotion" style="height: 3rem">
@@ -50,114 +50,117 @@
                                         </div>
                                         <div class="detail w-100 p-2">
                                              <div class="d-flex gap-3">
-                                             <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                                  <del class="original-price text-danger">$40 (USA)</del>
+                                                  <span class="product-price">$30 (USA)</span>
+                                                  <p class="fs-4">T-Shirt</p>
+                                                  <div class="customer-rating">★★★★★</div>
+                                             </div>
+                                             <p class="d-flex gap-2 text-warning">
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             </p>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
                                    </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
                               </div>
-                              
                          </div>
                     </div>
                </div>
-               
-          </div>
-          <div class="row mb-5">
+               <div class="row mb-5">
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
                          <div class="cards w-100 bg-light p-1 position-relative">
                               <div class="products">
@@ -170,112 +173,117 @@
                                         </div>
                                         <div class="detail w-100 p-2">
                                              <div class="d-flex gap-3">
-                                             <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                                  <del class="original-price text-danger">$40 (USA)</del>
+                                                  <span class="product-price">$30 (USA)</span>
+                                                  <p class="fs-4">T-Shirt</p>
+                                                  <div class="customer-rating">★★★★★</div>
+                                             </div>
+                                             <p class="d-flex gap-2 text-warning">
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             </p>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
                                    </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
                               </div>
                          </div>
                     </div>
                </div>
-          </div>
-          <div class="row mb-5">
+               <div class="row mb-5">
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
                          <div class="cards w-100 bg-light p-1 position-relative">
                               <div class="products">
@@ -288,112 +296,117 @@
                                         </div>
                                         <div class="detail w-100 p-2">
                                              <div class="d-flex gap-3">
-                                             <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                                  <del class="original-price text-danger">$40 (USA)</del>
+                                                  <span class="product-price">$30 (USA)</span>
+                                                  <p class="fs-4">T-Shirt</p>
+                                                  <div class="customer-rating">★★★★★</div>
+                                             </div>
+                                             <p class="d-flex gap-2 text-warning">
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             </p>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
                                    </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
                               </div>
                          </div>
                     </div>
                </div>
-          </div>
-          <div class="row mb-5">
+               <div class="row mb-5">
                     <div class="col-12 col-md-6 col-lg-4 mb-3">
                          <div class="cards w-100 bg-light p-1 position-relative">
                               <div class="products">
@@ -406,111 +419,116 @@
                                         </div>
                                         <div class="detail w-100 p-2">
                                              <div class="d-flex gap-3">
-                                             <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                                  <del class="original-price text-danger">$40 (USA)</del>
+                                                  <span class="product-price">$30 (USA)</span>
+                                                  <p class="fs-4">T-Shirt</p>
+                                                  <div class="customer-rating">★★★★★</div>
+                                             </div>
+                                             <p class="d-flex gap-2 text-warning">
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             <i class="fa-solid fa-star"></i>
+                                             </p>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
                                    </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
-                              </div>
-                              <div class="product-card">
-                                   <div class="pro">
-                                        <p>Product</p>
-                                   </div>
-                                   <div class="img" id="btn-detail">
-                                        <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
-                                   </div>
-                                   <div class="detail w-100 p-2">
-                                        <div class="d-flex gap-3">
-                                        <del class="regular_price text-danger">$40 (USA)</del>
-                                        <p class="sale_price">$30 (USA)</p>
+                                        <div class="product-card">
+                                             <div class="pro">
+                                                  <p>Product</p>
+                                             </div>
+                                             <div class="img" id="btn-detail">
+                                                  <img width="100%" src="https://placehold.co/300x450" alt="Product Image">
+                                             </div>
+                                             <div class="detail w-100 p-2">
+                                                  <div class="d-flex gap-3">
+                                                       <del class="original-price text-danger">$40 (USA)</del>
+                                                       <span class="product-price">$30 (USA)</span>
+                                                       <p class="fs-4">T-Shirt</p>
+                                                       <div class="customer-rating">★★★★★</div>
+                                                  </div>
+                                                  <p class="d-flex gap-2 text-warning">
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  <i class="fa-solid fa-star"></i>
+                                                  </p>
+                                             </div>
                                         </div>
-                                        <p class="fs-4">T-Shirt</p>
-                                        <p class="d-flex gap-2 text-warning">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        </p>
-                                   </div>
                               </div>
                          </div>
                     </div>
                </div>
           </div>
-    </div>
-</body>
+     </body>
 </html>
