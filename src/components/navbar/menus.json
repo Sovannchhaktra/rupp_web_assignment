@@ -6,17 +6,17 @@
   },
   {
     "title": "SHOP",
-    "route": "shop",
+    "route": "/shop",
     "isDroupDown": false
   },
   {
     "title": "PRODUCTS",
-    "route": "products",
+    "route": "/products",
     "isDroupDown": false
   },
   {
     "title": "CONTACT",
-    "route": "contact",
+    "route": "/contact",
     "isDroupDown": false
   }
 ]
