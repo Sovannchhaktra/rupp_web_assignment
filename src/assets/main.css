@@ -28,3 +28,16 @@
 .p-select-list-container .p-select-option {
      color: black;
 } */
+
+.p-paginator {
+     background: none !important;
+     justify-content: center !important;
+}
+.p-paginator .p-select {
+     width: fit-content !important;
+     font-size: 12px !important;
+     padding: 0 !important;
+}
+.p-paginator-page.p-paginator-page-selected {
+     background: #ebc000 !important;
+}
