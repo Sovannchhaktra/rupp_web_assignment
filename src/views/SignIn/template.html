@@ -17,47 +17,36 @@
           />
         </svg>
       </div>
-      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home /</p>
+      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home / </p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium">Sign In Account</p>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Sign In Account</p>
   </div>
   <div class="mt-9">
-    <span class="text-xl font-roboto border-b-2 font-medium">Persional</span>
-    <form class="mb-8 mt-6">
+    <span v-if="!isNext" class="text-xl font-roboto border-b-2 font-medium text-slate-900">Persional</span>
+    <form v-if="!isNext"  class="mb-8 mt-6">
       <div class="grid grid-cols-2">
         <span class="pt-4 pr-3">
-          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-            >Email<span class="text-red-600">*</span></label
-          >
-          <input
-            type="text"
-            name=""
-            id="code"
-            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-            placeholder="Email"
-          />
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-            Code is required.
-          </div> -->
+          <FloatLabel variant="on">
+            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+            <label for="on_label">Email<span class="text-red-600">*</span></label>
+        </FloatLabel>
         </span>
       </div>
-      <div class="grid grid-cols-2 mt-1">
+      <div class="grid grid-cols-2 mt-5">
         <span class="pt-4 pr-3 relative">
-          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-            >Password<span class="text-red-600">*</span></label
-          >
-          <input
+          <FloatLabel variant="on">
+            <InputText 
+            id="on_label" 
+            v-model="value3" 
             :type="isPassword ? 'password' : 'text'"
-            name=""
-            id="code"
-            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-            placeholder="Password"
-          />
+            class="w-full bg-white" />
+            <label for="on_label">Password<span class="text-red-600">*</span></label>
+        </FloatLabel>
           <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
             Code is required.
           </div> -->
 
-          <div class="absolute top-[3.3rem] right-6">
+          <div class="absolute top-[1.5rem] right-6">
             <svg
               v-if="isPassword"
               @click="isPassword = !isPassword"
@@ -66,7 +55,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-6 cursor-pointer"
+              class="size-6 cursor-pointer text-slate-900"
             >
               <path
                 stroke-linecap="round"
@@ -82,7 +71,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-6 cursor-pointer"
+              class="size-6 cursor-pointer text-slate-900"
             >
               <path
                 stroke-linecap="round"
@@ -116,6 +105,7 @@
 
         <span class="pt-4 pr-3">
           <button
+            @click="isNext = true"
             class="w-full text-white bg-blue-700 hover:bg-yel-500 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
           >
             Login
@@ -127,6 +117,20 @@
             Loading...
           </button> -->
         </span>
+      </div>
+    </form>
+
+    <!-- OTP -->
+
+    <form class="mb-8 flex justify-center" v-if="isNext">
+      <div class="flex flex-col items-center shadow-2xl rounded-md p-8 w-[20rem] mt-16 mb-16">
+        <img class="w-24" src="../../assets/icons/password.png" alt="">
+        <span class="text-lg font-roboto  font-medium text-slate-900 mb-8 mt-3">Enter OTP Code</span>
+        <InputOtp 
+        :length="5" 
+        v-model="value"/>
+        <p class="mt-2 text-sm text-red-400">Expried Code: 00:59</p>
+        <p class="text-slate-400 mt-4">Didn't receive code? <button class="text-blue-500">Resend</button></p>
       </div>
     </form>
   </div>

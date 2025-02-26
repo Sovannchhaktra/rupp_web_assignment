@@ -10,7 +10,7 @@
         <li
           v-for="(item, index) in menu"
           :key="index"
-          class="cursor-pointer font-bold font-roboto hover:text-yellow-500"
+          class="cursor-pointer font-bold font-roboto text-slate-900 hover:text-yellow-500"
         >
           <router-link :to="item.route">{{item.title}}</router-link>
         </li>
@@ -43,7 +43,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-7 cursor-pointer"
+            class="size-7 cursor-pointer text-slate-900"
           >
             <path
               stroke-linecap="round"
@@ -64,7 +64,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-8 cursor-pointer"
+          class="size-8 cursor-pointer text-slate-900"
         >
           <path
             stroke-linecap="round"
@@ -73,7 +73,7 @@
           />
         </svg>
         <div
-          class="absolute right-0 top-[2rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+          class="text-slate-900 absolute right-0 top-[2rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
         >
           <ul
             class="font-roboto flex flex-col gap-3 bg-slate-100 shadow rounded w-[10rem] px-5 py-3 mt-8 z-40"

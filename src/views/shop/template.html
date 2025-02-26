@@ -1,4 +1,90 @@
-<div>
-  <p class="font-bold text-xl">Shop Page</p>
-  <p>Coming soon!</p>
+<div class="mx-auto">  
+  <h2 class="text-2xl font-bold text-black">NEW PRODUCTS</h2>  
+  <div class="flex mt-10 mb-5"> 
+    <!-- New Products Section -->  
+    <div class="flex-1 p-0">  
+      <div class="grid grid-cols-3 gap-4 ">  
+        <router-link to="/product/detail/1" v-for="product in newProducts" :key="product.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
+          <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
+            <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
+              <p class="text-white text-lg font-semibold">Promotion</p>
+            </div>
+            <div class="cursor-pointer" id="btn-detail">
+              <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">
+            </div>
+            <div class="w-full p-2">
+              <div class="flex gap-3">
+                <del class="text-red-500 text-lg">$40 (USA)</del>
+                <p class="text-lg font-semibold text-gray-900">$30 (USA)</p>
+              </div>
+              <p class="text-xl  text-slate-900">T-Shirt</p>
+              <span class="flex gap-2">
+                <svg
+                v-for="i in star"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-yel-300">
+                  <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                </svg>                       
+              </span>
+            </div>
+          </div> 
+        </router-link>  
+      </div>  
+    </div>  
+    <div class="w-1/4 p-5">  
+      <h2 class="text-xl font-bold text-black">CATEGORIES</h2>  
+      <ul class="menu-category mb-5 font-bold">  
+        <li class="my-3 px-2 text-black">Man</li>  
+        <li class="bg-yellow-500 rounded py-3 px-2 text-white">Boy</li>  
+        <li class="my-3 text-black">Woman</li>  
+        <li class="bg-yellow-500 rounded py-3 px-2 text-white">Girl</li>  
+      </ul>  
+
+      <h2 class="text-xl font-bold mt-10 text-black">PROMOTION</h2>  
+      <button class="btn border border-red-400 rounded text-red-400 p-1 hover:bg-red-500 ease-in-out transition-transform duration-1000 hover:text-white mb-5 mt-3 ">Promotion</button>  
+
+      <h2 class="text-xl font-bold mt-5 text-black">PRICE</h2>  
+      <div class="flex gap-2 mt-3">  
+        <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">Low Price</button>  
+        <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">High Price</button>  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="mb-5">  
+    <h2 class="mb-4 text-2xl font-bold text-black">RELATED PRODUCTS</h2>  
+    <div class="grid grid-cols-4 gap-3">  
+      <router-link to="/product/detail/1" v-for="relatedProduct in relatedProducts" :key="relatedProduct.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
+        <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
+          <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
+            <p class="text-white text-lg font-semibold">Promotion</p>
+          </div>
+          <div class="cursor-pointer" id="btn-detail">
+            <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">
+          </div>
+          <div class="w-full p-2">
+            <div class="flex gap-3">
+              <del class="text-red-500 text-lg">$40 (USA)</del>
+              <p class="text-lg font-semibold text-gray-900">$30 (USA)</p>
+            </div>
+            <p class="text-xl  text-slate-900">T-Shirt</p>
+            <span class="flex gap-2">
+              <svg
+              v-for="i in star"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-yel-300">
+                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+              </svg>                       
+            </span>
+          </div>
+        </div>  
+      </router-link>  
+    </div>  
+  </div> 
+  <Paginator 
+    :rows="numRecord"
+    :totalRecords="objs.total"
+    :rowsPerPageOptions="pageOptions"
+    :first="pFirst"
+    :alwaysShow="false"
+    @page="pageEvent"
+  /> 
 </div>

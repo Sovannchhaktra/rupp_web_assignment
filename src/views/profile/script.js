@@ -1,3 +1,7 @@
+import InputText from 'primevue/inputtext';
+import FloatLabel from "primevue/floatlabel";
+import Select from 'primevue/select';
+
 export default {
   name: "Profle",
   data() {
@@ -5,4 +9,9 @@ export default {
       isFormDisabled: true,
     };
   },
+  components: {
+    FloatLabel,
+    InputText,
+    Select
+},
 };

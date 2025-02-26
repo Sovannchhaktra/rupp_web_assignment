@@ -1,0 +1,43 @@
+::selection {
+     background-color: #f8f877;
+}
+.p-inputtext ,.p-select{
+     background-color: white !important;
+     color: #333 !important;
+     border: 0.8px solid #333 !important;
+}
+.p-floatlabel label ,.p-select label{
+     background-color: white !important;
+     color: #5e5d5d !important;
+}
+
+.p-inputotp-input, .p-select{
+     box-shadow: 2px 2px 5px #cacaca !important;
+}
+
+.p-select {
+     width: 100% !important;
+     box-shadow: none !important;
+}
+.p-select .p-select-label {
+     color: #333 !important;
+}
+/* .p-select-list-container {
+     background-color: #f1f5f9 !important;
+}
+.p-select-list-container .p-select-option {
+     color: black;
+} */
+
+.p-paginator {
+     background: none !important;
+     justify-content: center !important;
+}
+.p-paginator .p-select {
+     width: fit-content !important;
+     font-size: 12px !important;
+     padding: 0 !important;
+}
+.p-paginator-page.p-paginator-page-selected {
+     background: #ebc000 !important;
+}

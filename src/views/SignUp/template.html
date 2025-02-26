@@ -19,138 +19,65 @@
       </div>
       <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home /</p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium">Create Account</p>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Create Account</p>
   </div>
   <div class="mt-7">
-    <span class="text-xl font-roboto border-b-2 font-medium">Persional</span>
-    <form class="mb-5">
-      <div class="grid grid-cols-2">
+    <span class="text-xl font-roboto border-b-2 font-medium text-slate-900">Persional</span>
+    <form class="mb-10">
+      <div class="grid grid-cols-2 mb-5">
         <span class="pt-4 pr-3">
-          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-            >First Name<span class="text-red-600">*</span></label
-          >
-          <input
-            type="text"
-            name=""
-            id="code"
-            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-            placeholder="First Name"
-          />
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-            Code is required.
-          </div> -->
+          <FloatLabel variant="on">
+            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+            <label for="on_label">First Name<span class="text-red-600">*</span></label>
+        </FloatLabel>
         </span>
         <span class="pt-4 pr-3">
-          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-            >Last Name<span class="text-red-600">*</span></label
-          >
-          <input
-            type="text"
-            name=""
-            id="code"
-            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-            placeholder="Last Name"
-          />
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+          <FloatLabel variant="on">
+            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+            <label for="on_label">Last Name<span class="text-red-600">*</span></label>
+        </FloatLabel>
         </span>
       </div>
-      <div class="grid grid-cols-2">
+      <div class="grid grid-cols-2 mb-5">
         <span class="pt-4 pr-3">
-          <label for="gender" class="mb-2 font-medium font-roboto text-gray-700"
-            >Gender<span class="text-red-600">*</span></label
-          >
-          <select
-            required
-            id="gender"
-            class="select-gray mt-1 px-5 py-2 w-full font-roboto text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
-          >
-            <option selected value="" disabled class="text-gray-400">
-              Select Gender
-            </option>
-            <option value="MALE" class="text-black">Male</option>
-            <option value="FEMALE" class="text-black">Female</option>
-          </select>
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Gender is required.
-            </div> -->
+          <Select 
+            v-model="selectedCity" 
+            :options="cities" 
+            optionLabel="name" 
+            placeholder="---Select Gender---" 
+            class="w-full md:w-56" />
         </span>
         <span class="pt-4 pr-3">
-          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-            >Phone Number<span class="text-red-600">*</span></label
-          >
-          <input
-            type="text"
-            name=""
-            id="code"
-            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-            placeholder="Phone Number"
-          />
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+          <FloatLabel variant="on">
+            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+            <label for="on_label">Phone Number<span class="text-red-600">*</span></label>
+        </FloatLabel>
         </span>
       </div>
-      <div class="grid grid-cols-1">
+      <div class="grid grid-cols-1 mb-5">
         <span class="pt-4 pr-3">
-          <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
-            >Email<span class="text-red-600">*</span></label
-          >
-          <input
-            type="text"
-            name=""
-            id="code"
-            class="mt-1 px-5 py-2 w-full text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-300 focus:border-blue-300 focus:ring-1"
-            placeholder="Email"
-          />
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-              Code is required.
-            </div> -->
+          <FloatLabel variant="on">
+            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+            <label for="on_label">Email<span class="text-red-600">*</span></label>
+        </FloatLabel>
         </span>
       </div>
-      <div class="grid grid-cols-2">
+      <div class="grid grid-cols-2 mb-5">
         <span class="pt-4 pr-3">
-          <label for="gender" class="mb-2 font-medium font-roboto text-gray-700"
-            >Country<span class="text-red-600">*</span></label
-          >
-          <select
-            required
-            id="gender"
-            class="select-gray mt-1 px-5 py-2 w-full font-roboto text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
-          >
-            <option selected value="" disabled class="text-gray-400">
-              Select Country
-            </option>
-            <option value="" class="text-black">Cambodain</option>
-            <option value="" class="text-black">Thailand</option>
-            <option value="" class="text-black">Vietnam</option>
-            <option value="" class="text-black">Korean</option>
-          </select>
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-                Gender is required.
-              </div> -->
+          <Select 
+            v-model="selectedCity" 
+            :options="cities" 
+            optionLabel="name" 
+            placeholder="---Select Country---" 
+            class="w-full md:w-56" />
         </span>
         <span class="pt-4 pr-3">
-          <label for="gender" class="mb-2 font-medium font-roboto text-gray-700"
-            >City/Province<span class="text-red-600">*</span></label
-          >
-          <select
-            required
-            id="gender"
-            class="select-gray mt-1 px-5 py-2 w-full font-roboto text-base text-black border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
-          >
-            <option selected value="" disabled class="text-gray-400">
-              Select City/Province
-            </option>
-            <option value="" class="text-black">Kampong Thom</option>
-            <option value="" class="text-black">Kampong Chhnang</option>
-            <option value="" class="text-black">Kep</option>
-            <option value="" class="text-black">Kampong Speu</option>
-          </select>
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-                Gender is required.
-              </div> -->
+          <Select 
+            v-model="selectedCity" 
+            :options="cities" 
+            optionLabel="name" 
+            placeholder="---City/Province---" 
+            class="w-full md:w-56" />
         </span>
       </div>
 
