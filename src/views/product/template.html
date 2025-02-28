@@ -1,5 +1,13 @@
 <div id="app" class="container">
-     <p class="font-bold text-xl">ALL PRODUCTS</p>
+     <div class="header">
+          <p class="font-bold text-xl">ALL PRODUCTS</p>
+          <div class="search">
+               <input type="text" placeholder="Search..." id="search-bar">
+               <button id="search-button">
+                   <i class="fa-solid fa-magnifying-glass">Search</i>
+               </button>
+          </div>
+     </div>
      <div id="app">
           <div v-for="category in categories" :key="category.name">
                <h2>{{ category.name }}</h2>
@@ -422,4 +430,19 @@
                          </div>
                     </div>
                </div>
+     <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <span>...</span>
+          <a href="#">42</a>
+          <a href="#">&raquo;</a>
+     </div>
 </div>
