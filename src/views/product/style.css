@@ -5,6 +5,38 @@ body {
     background-color: #f4f4f4;
     display: flex;
 }
+.header{
+    display: flex;
+}
+.search{
+    display: flex;
+    width: 75%;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px;
+}
+#search-bar {
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 100px 0 0 100px;
+    outline: none;
+}
+#search-button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 0 100px 100px 0;
+    cursor: pointer;
+}
+#search-button img {
+    width: 24x;
+    height: 24px;
+}
+#search-button:hover {
+    background-color: #45a049;
+}
 .navbar {
     background-color: #fff;
     padding: 10px 20px;
@@ -73,13 +105,11 @@ body {
     color: gold;
 }
 .pro{
-    position: relative;
     position: absolute;
     width: 90px;
     padding: 5px;
     background-color: gold;
     color: white;
-    z-index: 111111;
 }
 .detail{
     text-align: left;
@@ -95,10 +125,10 @@ body {
 .img img {
     width: 100%;
 }
-
 .img>img:hover{
     scale: 1.1;
     transition: ease-in-out scale 0.2s;
+    z-index: 111111;
 }
 .original-price {
     color: #e74c3c;
@@ -132,4 +162,26 @@ body {
 }
 .p-2 {
     padding: 10px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.pagination a, .pagination span {
+    margin: 0 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.pagination a:hover {
+    background-color: #ddd;
+}
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
 }
