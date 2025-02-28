@@ -24,6 +24,7 @@ body {
 }
 #search-button {
     padding: 10px;
+    font-weight: bold;
     border: 1px solid #ddd;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -35,7 +36,7 @@ body {
     height: 24px;
 }
 #search-button:hover {
-    background-color: #45a049;
+    color: gold;
 }
 .navbar {
     background-color: #fff;
