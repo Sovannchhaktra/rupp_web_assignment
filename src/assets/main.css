@@ -1,5 +1,5 @@
 ::selection {
-     background-color: #f8f877;
+     background-color: #f3fba4;
 }
 .p-inputtext ,.p-select{
      background-color: white !important;
@@ -22,12 +22,26 @@
 .p-select .p-select-label {
      color: #333 !important;
 }
-/* .p-select-list-container {
-     background-color: #f1f5f9 !important;
+
+.p-select-overlay {
+     border: none !important;
+     background: #ffff;
 }
-.p-select-list-container .p-select-option {
-     color: black;
-} */
+.p-select-list-container {
+     background-color: #f1f5f9 !important;
+ }
+ .p-select-list-container .p-select-option {
+     color: #333 !important;
+ }
+ .p-select-option:not(.p-select-option-selected):not(.p-disabled).p-focus {
+     background-color: #2e2e2e2d !important;
+ }
+ .p-select-option.p-select-option-selected {
+     background-color: #2e2e2e2d !important
+ }
+ .p-select-header {
+     background-color: #f1f5f9 !important;
+ }
 
 .p-paginator {
      background: none !important;

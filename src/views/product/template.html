@@ -1,9 +1,9 @@
 <div class="w-full">
   <div class="flex justify-between items-center">
-    <span class="mb-4 text-slate-900 font-roboto text-2xl font-bold">ALL PRODUCTS</span>
+    <span class="mb-4 text-slate-900 font-roboto text-2xl font-bold">{{$t('allProducts')}}</span>
     <span class="flex items-center">
       <FloatLabel variant="on">
-        <InputText id="on_label" placeholder="Enter To Search" class="w-full bg-white" />
+        <InputText id="on_label" :placeholder="$t('search')" class="w-full bg-white" />
       </FloatLabel>
       <button class="bg-blue-500 no-underline p-[7.7px] h-full border rounded-r-sm text-white">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-slate-50 font-bold">
@@ -20,7 +20,7 @@
     <router-link to="/product/detail/1">
       <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
         <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
-          <p class="text-white text-lg font-semibold">Promotion</p>
+          <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
         </div>
         <div class="cursor-pointer" id="btn-detail">
           <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">
