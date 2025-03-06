@@ -1,5 +1,6 @@
 <div class="w-full">
-    <h2 class="text-2xl font-bold text-black mb-7">NEW PRODUCTS</h2>  
+    <h2 class="text-2xl font-bold text-black mb-7">NEW PRODUCTS</h2> 
+    <Loader v-if="isLoading"/> 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
       <!-- Product Card -->
       <div v-for="item in lists">

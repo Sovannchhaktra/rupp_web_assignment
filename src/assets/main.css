@@ -41,3 +41,11 @@
 .p-paginator-page.p-paginator-page-selected {
      background: #ebc000 !important;
 }
+
+.p-progressbar {
+     background: #cacaca !important;
+}
+
+.p-progressbar .p-progressbar-value {
+     background: #277dff;
+}
