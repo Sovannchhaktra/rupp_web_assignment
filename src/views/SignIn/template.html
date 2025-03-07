@@ -17,18 +17,18 @@
           />
         </svg>
       </div>
-      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home / </p>
+      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">{{$t('menuHome')}} / </p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Sign In Account</p>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">{{$t('signInAccount')}}</p>
   </div>
   <div class="mt-9">
-    <span v-if="!isNext" class="text-xl font-roboto border-b-2 font-medium text-slate-900">Persional</span>
+    <span v-if="!isNext" class="text-xl font-roboto border-b-2 font-medium text-slate-900">{{$t('persional')}}</span>
     <form v-if="!isNext"  class="mb-8 mt-6">
       <div class="grid grid-cols-2">
         <span class="pt-4 pr-3">
           <FloatLabel variant="on">
             <InputText id="on_label" v-model="value3" class="w-full bg-white" />
-            <label for="on_label">Email<span class="text-red-600">*</span></label>
+            <label for="on_label">{{$t('email')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
         </span>
       </div>
@@ -40,7 +40,7 @@
             v-model="value3" 
             :type="isPassword ? 'password' : 'text'"
             class="w-full bg-white" />
-            <label for="on_label">Password<span class="text-red-600">*</span></label>
+            <label for="on_label">{{$t('password')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
           <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
             Code is required.
@@ -98,7 +98,7 @@
             <button
               class="w-full rounded-md py-2 px-3 text-center bg-gray-300 hover:bg-red-400 hover:text-white"
             >
-              Cancel
+              {{$t('cancel')}}
             </button>
           </router-link>
         </span>
@@ -108,7 +108,7 @@
             @click="isNext = true"
             class="w-full text-white bg-blue-700 hover:bg-yel-500 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
           >
-            Login
+            {{$t('login')}}
           </button>
           <!-- <button
             v-else
@@ -125,12 +125,12 @@
     <form class="mb-8 flex justify-center" v-if="isNext">
       <div class="flex flex-col items-center shadow-2xl rounded-md p-8 w-[20rem] mt-16 mb-16">
         <img class="w-24" src="../../assets/icons/password.png" alt="">
-        <span class="text-lg font-roboto  font-medium text-slate-900 mb-8 mt-3">Enter OTP Code</span>
+        <span class="text-lg font-roboto  font-medium text-slate-900 mb-8 mt-3">{{$t('enterOtpCode')}}</span>
         <InputOtp 
         :length="5" 
         v-model="value"/>
-        <p class="mt-2 text-sm text-red-400">Expried Code: 00:59</p>
-        <p class="text-slate-400 mt-4">Didn't receive code? <button class="text-blue-500">Resend</button></p>
+        <p class="mt-2 text-sm text-red-400">{{$t('expriedCode')}}: 00:59</p>
+        <p class="text-slate-400 mt-4">{{$t('receiveCode')}}? <button class="text-blue-500">{{$t('resend')}}</button></p>
       </div>
     </form>
   </div>

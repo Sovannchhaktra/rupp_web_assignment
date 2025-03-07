@@ -1,12 +1,13 @@
 <div class="w-full">
-    <h2 class="text-2xl font-bold text-black mb-7">NEW PRODUCTS</h2>  
+    <h2 class="text-2xl font-bold text-black mb-7">{{$t('homeNewProduct')}}</h2> 
+    <Loader v-if="isLoading"/> 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
       <!-- Product Card -->
       <div v-for="item in lists">
         <router-link to="/product/detail/1">
             <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
                 <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
-                <p class="text-white text-lg font-semibold">Promotion</p>
+                <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
                 </div>
                 <div class="cursor-pointer" id="btn-detail">
                 <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">
@@ -32,14 +33,14 @@
   </div>
 </div>
 <div class="w-full mt-7">
-  <h2 class="text-2xl font-bold text-black mb-7">POPULAR PRODUCT</h2>
+  <h2 class="text-2xl font-bold text-black mb-7">{{$t('homePopularProducts')}}</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
       <!-- Product Card -->
       <div v-for="item in lists">
         <router-link to="/product/detail/1">
             <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
                 <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
-                <p class="text-white text-lg font-semibold">Promotion</p>
+                <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
                 </div>
                 <div class="cursor-pointer" id="btn-detail">
                 <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">
@@ -64,14 +65,14 @@
   </div>
 </div>
 <div class="w-full mt-7">
-    <h2 class="text-2xl font-bold text-black mb-7">POPULAR PRODUCT</h2>
+    <h2 class="text-2xl font-bold text-black mb-7">{{$t('homePromotionProducts')}}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
         <!-- Product Card -->
       <div v-for="item in lists">
         <router-link to="/product/detail/1">
             <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
                 <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
-                <p class="text-white text-lg font-semibold">Promotion</p>
+                <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
                 </div>
                 <div class="cursor-pointer" id="btn-detail">
                 <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">

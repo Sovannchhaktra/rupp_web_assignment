@@ -16,9 +16,9 @@
           />
         </svg>
       </div>
-      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home / </p>
+      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">{{$t('menuHome')}} / </p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Product Detail</p>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">{{$t('productDetail')}}</p>
   </div>
 <div class="flex px-20 mt-5">
     <div class="w-full md:w-1/2 p-0 flex justify-center">
@@ -30,7 +30,7 @@
 
             <!-- Price -->
             <div class="mb-4">
-                <h2 class="text-lg font-semibold mb-2 text-black">PRICE</h2>
+                <h2 class="text-lg font-semibold mb-2 text-black">{{$t('shopPrice')}}</h2>
                 <div class="ml-5">
                     <p class="text-danger line-through text-lg text-red-500">- $95.90 (US)</p>
                     <p class="text-green-600 text-lg mt-1">- $90.95 (US)</p>
@@ -39,35 +39,64 @@
 
             <!-- Category -->
             <div class="mb-4">
-                <h2 class="text-lg font-semibold mb-2 text-black">CATEGORY</h2>
+                <h2 class="text-lg font-semibold mb-2 text-black">{{$t('shopCategories')}}</h2>
                 <p class="text-gray-500 text-lg ml-5">- Woman</p>
             </div>
 
             <!-- Color -->
             <div class="mb-4">
-                <h2 class="text-lg font-semibold mb-2 text-black">COLOR</h2>
-                <p class="text-gray-500 text-sm ml-5">Red, Blue, Yellow</p>
+                <h2 class="text-lg font-semibold mb-2 text-black">{{$t('color')}}</h2>
+                <!-- <p class="text-gray-500 text-sm ml-5">Red, Blue, Yellow</p> -->
+                <Select 
+                    v-model="selectedColor" 
+                    :options="color" 
+                    filter 
+                    optionLabel="name"
+                    value="XL"
+                    class="w-full md:w-56">
+                    <template #option="slotProps">
+                        <div class="flex items-center">
+                            <span 
+                            class="p-2 mr-2" 
+                            :style="`background-color: ${slotProps.option.code}; width: 18px;`" ></span>
+                            <div>{{ slotProps.option.name }}</div>
+                        </div>
+                    </template>
+                </Select>
             </div>
 
             <!-- Size -->
             <div class="mb-4">
-                <h2 class="text-lg font-semibold mb-2 text-black">SIZE</h2>
-                <p class="text-gray-500 text-sm ml-5">XXL, XL, L, S, XS</p>
+                <h2 class="text-lg font-semibold mb-2 text-black">{{$t('size')}}</h2>
+                <!-- <p class="text-gray-500 text-sm ml-5">XXL, XL, L, S, XS</p> -->
+                <Select 
+                    v-model="selectedSize" 
+                    :options="size" 
+                    filter 
+                    optionLabel="name"
+                    value="XL"
+                    class="w-full md:w-56">
+                    <template #option="slotProps">
+                        <div class="flex items-center">
+                            <div>{{ slotProps.option.name }}</div>
+                        </div>
+                    </template>
+                </Select>
             </div>
 
             <!-- Buy Section -->
             <div class="mb-5">
-                <h2 class="text-lg font-semibold mb-2 text-black">BUY</h2>
+                <h2 class="text-lg font-semibold mb-2 text-black">{{$t('buy')}}</h2>
                 <div class="flex items-center gap-1">
                     <InputText id="on_label"  type="number"
                     value="2" class="border outline-none rounded-sm py-0 px-2 w-20 text-center h-10 number" />
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-sm">Add To Cart</button>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-sm">{{$t('addToCart')}}</button>
                 </div>
             </div>
 
             <!-- Description -->
             <div>
-                <h2 class="text-lg font-semibold mb-2 text-black">DESCRIPTION</h2>
+                <h2 class="text-lg font-semibold mb-2 text-black">{{$t('description')}}</h2>
                 <p class="text-gray-500 text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eligendi dolore at modi id cupiditate ipsa, iusto explicabo veritatis magni!
                 </p>

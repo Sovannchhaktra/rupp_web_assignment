@@ -1,5 +1,5 @@
 <div class="mx-auto">  
-  <h2 class="text-2xl font-bold text-black">NEW PRODUCTS</h2>  
+  <h2 class="text-2xl font-bold text-black">{{$t('homeNewProduct')}}</h2>  
   <div class="flex mt-10 mb-5"> 
     <!-- New Products Section -->  
     <div class="flex-1 p-0">  
@@ -7,7 +7,7 @@
         <router-link to="/product/detail/1" v-for="product in newProducts" :key="product.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
           <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
             <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
-              <p class="text-white text-lg font-semibold">Promotion</p>
+              <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
             </div>
             <div class="cursor-pointer" id="btn-detail">
               <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">
@@ -31,32 +31,32 @@
       </div>  
     </div>  
     <div class="w-1/4 p-5">  
-      <h2 class="text-xl font-bold text-black">CATEGORIES</h2>  
+      <h2 class="text-xl font-bold text-black">{{ $t('shopCategories') }}</h2>  
       <ul class="menu-category mb-5 font-bold">  
-        <li class="my-3 px-2 text-black">Man</li>  
-        <li class="bg-yellow-500 rounded py-3 px-2 text-white">Boy</li>  
-        <li class="my-3 text-black">Woman</li>  
-        <li class="bg-yellow-500 rounded py-3 px-2 text-white">Girl</li>  
+        <li class="my-3 px-2 text-black">{{ $t('shopMan') }}</li>  
+        <li class="bg-yellow-500 rounded py-3 px-2 text-white">{{ $t('shopBoy') }}</li>  
+        <li class="my-3 text-black">{{ $t('shopWoman') }}</li>  
+        <li class="bg-yellow-500 rounded py-3 px-2 text-white">{{ $t('shopGirl') }}</li>  
       </ul>  
 
-      <h2 class="text-xl font-bold mt-10 text-black">PROMOTION</h2>  
-      <button class="btn border border-red-400 rounded text-red-400 p-1 hover:bg-red-500 ease-in-out transition-transform duration-1000 hover:text-white mb-5 mt-3 ">Promotion</button>  
+      <h2 class="text-xl font-bold mt-10 text-black">{{ $t('homePromotion') }}</h2>  
+      <button class="btn border border-red-400 rounded text-red-400 p-1 hover:bg-red-500 ease-in-out transition-transform duration-1000 hover:text-white mb-5 mt-3 ">{{ $t('homePromotion') }}</button>  
 
-      <h2 class="text-xl font-bold mt-5 text-black">PRICE</h2>  
+      <h2 class="text-xl font-bold mt-5 text-black">{{ $t('shopPrice') }}</h2>  
       <div class="flex gap-2 mt-3">  
-        <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">Low Price</button>  
-        <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">High Price</button>  
+        <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">{{ $t('shopLowPrice') }}</button>  
+        <button class="btn border border-yellow-400 rounded text-yellow-400 hover:bg-yellow-500 hover:text-black p-1">{{ $t('shopHighPrice') }}</button>  
       </div>  
     </div>  
   </div>  
 
   <div class="mb-5">  
-    <h2 class="mb-4 text-2xl font-bold text-black">RELATED PRODUCTS</h2>  
+    <h2 class="mb-4 text-2xl font-bold text-black">{{ $t('shopRelatedProducts') }}</h2>  
     <div class="grid grid-cols-4 gap-3">  
       <router-link to="/product/detail/1" v-for="relatedProduct in relatedProducts" :key="relatedProduct.id" class="bg-gray-100 rounded-lg relative cursor-pointer">  
         <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
           <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
-            <p class="text-white text-lg font-semibold">Promotion</p>
+            <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
           </div>
           <div class="cursor-pointer" id="btn-detail">
             <img class="w-full rounded-sm" src="https://placehold.co/300x450" alt="Product Image">

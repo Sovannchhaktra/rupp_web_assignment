@@ -1,6 +1,6 @@
 [
   {
-    "title": "HOME",
+    "title": "$t('menuHome')",
     "route": "/",
     "isDroupDown": false
   },

@@ -1,3 +1,7 @@
 .number {
     border-radius: 2px;
 }
+.p-select {
+    width: 150px !important;
+    border: none !important;
+}

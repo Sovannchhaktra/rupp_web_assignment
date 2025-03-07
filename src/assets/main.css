@@ -1,5 +1,8 @@
+
+@import 'primeicons/primeicons.css';
+
 ::selection {
-     background-color: #f8f877;
+     background-color: #f3fba4;
 }
 .p-inputtext ,.p-select{
      background-color: white !important;
@@ -22,12 +25,26 @@
 .p-select .p-select-label {
      color: #333 !important;
 }
-/* .p-select-list-container {
-     background-color: #f1f5f9 !important;
+
+.p-select-overlay {
+     border: none !important;
+     background: #ffff;
 }
-.p-select-list-container .p-select-option {
-     color: black;
-} */
+.p-select-list-container {
+     background-color: #f1f5f9 !important;
+ }
+ .p-select-list-container .p-select-option {
+     color: #333 !important;
+ }
+ .p-select-option:not(.p-select-option-selected):not(.p-disabled).p-focus {
+     background-color: #2e2e2e2d !important;
+ }
+ .p-select-option.p-select-option-selected {
+     background-color: #2e2e2e2d !important
+ }
+ .p-select-header {
+     background-color: #f1f5f9 !important;
+ }
 
 .p-paginator {
      background: none !important;
@@ -40,4 +57,31 @@
 }
 .p-paginator-page.p-paginator-page-selected {
      background: #ebc000 !important;
+}
+
+.p-progressbar {
+     background: #cacaca !important;
+}
+
+.p-progressbar .p-progressbar-value {
+     background: #277dff;
+}
+.p-dialog {
+     background: #ffff !important;
+     color: #333 !important;
+}
+.p-panel {
+     background: #f3f3f3 !important;
+     color: #333 !important;
+     border: 0.2px solid #b5b5b5 !important;
+     border-radius: 0 !important;
+}
+.p-panel .p-panel-header {
+     color: #333 !important;
+}
+.p-card {
+     background: #f3f3f3 !important;
+     color: #333 !important;
+     border: 0.2px solid #b5b5b5 !important;
+     border-radius: 0 !important;
 }

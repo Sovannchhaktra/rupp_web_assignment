@@ -3,12 +3,18 @@ import {ref,computed} from 'vue'
 
     import Navbar from "@/components/navbar/index.vue";
     import Footer from "@/components/footer/index.vue";
-    // import Shop from "@/views/shop/index.vue"
     export default {
       name: "App",
       components: {
         Navbar,
         Footer,
+      },
+      data() {
+        
+      },
+      mounted() {
+        const token = "12345abcde";
+        sessionStorage.setItem("accessToken", token);
       },
     };
 </script>

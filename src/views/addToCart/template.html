@@ -17,9 +17,9 @@
           />
         </svg>
       </div>
-      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">Home /</p>
+      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">{{$t('menuHome')}} /</p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">Products</p>
+    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">{{$t('menuProducts')}}</p>
   </div>
   <div class="w-full flex gap-5 mt-5">
     <div class="bg-white h-fit w-[70%] p-4 rounded-md shadow-md">
@@ -38,7 +38,7 @@
               <p class="text-[12px] text-gray-700">
                 $12.99 &nbsp;&nbsp;&nbsp;<span
                   class="text-green-500 font-medium"
-                  >In Stock</span
+                  >{{$t('inStock')}}</span
                 >
               </p>
             </div>
@@ -64,7 +64,7 @@
                 />
               </svg>
 
-              <span class="font-medium text-slate-700">Save</span>
+              <span class="font-medium text-slate-700">{{$t('save')}}</span>
             </div>
             <div
               class="flex items-center gap-1 justify-center cursor-pointer py-1 px-2 border bg-red-100 rounded-md"
@@ -81,69 +81,146 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="font-medium text-slate-700">Delete</span>
+              <span class="font-medium text-slate-700">{{$t('delete')}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="bg-white shadow-md h-fit w-[30%] rounded-md p-4">
-      <span class="font-roboto font-medium text-slate-900">Delivery</span>
+      <span class="font-roboto font-medium text-slate-900">{{$t('delivery')}}</span>
       <div
-        class="bg-gray-400 w-48 flex gap-2 p-1 px-1 rounded-md font-roboto mt-5"
+        class="bg-gray-400 w-fit flex gap-2 p-1 px-1 rounded-md font-roboto mt-5"
       >
         <span class="text-center bg-white shadow-md py-1 px-2 rounded-md text-slate-900"
-          >Free</span
+          >{{$t('free')}}</span
         >
         <span class="text-center py-1 px-2">Express: $9.99</span>
       </div>
       <div>
         <p class="text-gray-400 font-roboto text-sm mt-1">
-          Delivery date: January,27,2024
+          {{$t('deliveryDate')}}: January,27,2024
         </p>
       </div>
       <hr class="mt-6" />
       <div class="mt-6 flex items-center">
-        <InputText id="on_label" v-model="value3" type="number" placeholder="Promocode" class="border outline-none rounded-l-md py-1 px-4 w-60 text-[15px] d" />
+        <InputText id="on_label" v-model="value3" type="number" :placeholder="$t('promocode')" class="border outline-none rounded-l-md py-1 px-4 w-60 text-[15px] d" />
         <button
           class="bg-gray-300 border border-gray-500 text-slate-900 py-2 px-2 rounded-r-md font-roboto text-[15px]"
         >
-          Apply
+          {{$t('apply')}}
         </button>
       </div>
       <div>
-        <p class="text-gray-400 font-roboto text-sm mt-1">20% off Discount</p>
+        <p class="text-gray-400 font-roboto text-sm mt-1">20% {{$t('offDiscount')}}</p>
       </div>
       <hr class="mt-6" />
       <div class="mt-6 mb-6 font-roboto text-[15px] flex flex-col gap-2 text-slate-800">
         <div class="flex justify-between">
-          <span>Subtotal</span>
+          <span>{{$t('subtotal')}}</span>
           <span>$00.00</span>
         </div>
         <div class="flex justify-between">
-          <span>Discount</span>
+          <span>{{$t('discount')}}</span>
           <span class="flex"><p class="text-red-500">(20%)</p> - $16.19</span>
         </div>
         <div class="flex justify-between">
-          <span>Delivery</span>
+          <span>{{$t('delivery')}}</span>
           <span>$00.00</span>
         </div>
         <div class="flex justify-between">
-          <span>Tax</span>
+          <span>{{$t('tax')}}</span>
           <span>+$14.00</span>
         </div>
         <hr class="mt-5" />
         <div class="flex justify-between mt-5">
-          <span>Total</span>
+          <span>{{$t('total')}}</span>
           <span class="text-blue-500 font-medium" >$78.76</span>
         </div>
       </div>
       <button
+        @click="visible = true"
         type="button"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md font-roboto text-sm w-full px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
       >
-        Proceed To Checkout
+        {{$t('proceedToCheckout')}}
       </button>
     </div>
   </div>
 </div>
+
+<Dialog v-model:visible="visible" modal :header="$t('payment')" :style="{ width: '75rem' }">
+  <div class="flex gap-3">
+    <div class="w-[70%]">
+      <Panel :header="$t('selectPaymentMethod')" toggleable>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="cursor-pointer">
+            <Card>
+              <template #content>
+                  <p class="m-0 flex items-center gap-3">
+                    <i class="pi pi-credit-card" style="font-size: 2rem"></i>
+                    <span>{{$t('creditCard')}}</span>
+                  </p>
+              </template>
+            </Card>
+          </div>
+          <div class="cursor-pointer">
+            <Card>
+              <template #content>
+                <p class="m-0 flex items-center gap-3">
+                  <i class="pi pi-paypal" style="font-size: 2rem"></i>
+                  <span>{{$t('payPal')}}</span>
+                </p>
+              </template>
+            </Card>
+          </div>
+          <div class="cursor-pointer">
+            <Card>
+              <template #content>
+                <p class="m-0 flex items-center gap-3">
+                  <i class="pi pi-building-columns" style="font-size: 2rem"></i>
+                  <span>{{$t('bankTransfer')}}</span>
+                </p>
+              </template>
+            </Card>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 mt-6 mb-5">
+          <span class="pt-4">
+            <FloatLabel variant="on">
+              <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+              <label for="on_label">{{$t('nameOnCard')}}<span class="text-red-600">*</span></label>
+            </FloatLabel>
+          </span>
+        </div>
+        <div class="grid grid-cols-1 mt-6 mb-5">
+          <span class="pt-4">
+            <IconField>
+              <InputText v-model="value2" placeholder="0000 - 0000 - 0000" class="w-full bg-white"/>
+              <InputIcon class="pi pi-credit-card"/>
+            </IconField>
+          </span>
+        </div>
+        <div class="grid grid-cols-1 mt-6">
+          <span class="pt-4">
+            <DatePicker 
+            v-model="icondisplay" 
+            showIcon 
+            fluid 
+            iconDisplay="input" 
+            placeholder="00/00/0000" 
+            dateFormat="dd/mm/yy"
+            />
+          </span>
+        </div>
+      </Panel>
+    </div>
+    <div class="w-[30%]">
+      <Panel :header="$t('orderSummary')" toggleable>
+        <p class="m-0">
+            Coming Soon!
+        </p>
+      </Panel>
+    </div>
+  </div>
+</Dialog>
