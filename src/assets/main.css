@@ -1,3 +1,6 @@
+
+@import 'primeicons/primeicons.css';
+
 ::selection {
      background-color: #f3fba4;
 }
@@ -62,4 +65,23 @@
 
 .p-progressbar .p-progressbar-value {
      background: #277dff;
+}
+.p-dialog {
+     background: #ffff !important;
+     color: #333 !important;
+}
+.p-panel {
+     background: #f3f3f3 !important;
+     color: #333 !important;
+     border: 0.2px solid #b5b5b5 !important;
+     border-radius: 0 !important;
+}
+.p-panel .p-panel-header {
+     color: #333 !important;
+}
+.p-card {
+     background: #f3f3f3 !important;
+     color: #333 !important;
+     border: 0.2px solid #b5b5b5 !important;
+     border-radius: 0 !important;
 }

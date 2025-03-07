@@ -63,5 +63,12 @@
     "selectCountry": "--- ជ្រើសរើសប្រទេស ---",
     "selectCityProvince": "--- ជ្រើសរើសទីក្រុង/ខេត្ត ---",
     "profile": "ប្រវត្តិរូប",
-    "modify": "កែប្រែ"
+    "modify": "កែប្រែ",
+    "payment": "ទូទាត់ប្រាក់",
+    "selectPaymentMethod": "ជ្រើសរើសវិធីសាស្រ្តបង់ប្រាក់",
+    "orderSummary": "ការបញ្ជាទិញ",
+    "creditCard": "កាតឥណទាន",
+    "payPal": "PayPal",
+    "bankTransfer": "ការផ្ទេរប្រាក់តាមធនាគារ",
+    "nameOnCard": "ឈ្មោះនៅលើកាត"
 }

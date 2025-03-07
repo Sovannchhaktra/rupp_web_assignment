@@ -63,5 +63,12 @@
     "selectCountry": "--- Select Country ---",
     "selectCityProvince": "--- Select City/Province ---",
     "profile": "Profile",
-    "modify": "Modify"
+    "modify": "Modify",
+    "payment": "Payment",
+    "selectPaymentMethod": "SELECT PAYMENT METHOD",
+    "orderSummary": "ORDER SUMMARY",
+    "creditCard": "Credit Card",
+    "payPal": "PayPal",
+    "bankTransfer": "Bank Transfer",
+    "nameOnCard": "NAME ON CARD"
 }

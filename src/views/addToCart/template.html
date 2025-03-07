@@ -139,6 +139,7 @@
         </div>
       </div>
       <button
+        @click="visible = true"
         type="button"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md font-roboto text-sm w-full px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
       >
@@ -147,3 +148,79 @@
     </div>
   </div>
 </div>
+
+<Dialog v-model:visible="visible" modal :header="$t('payment')" :style="{ width: '75rem' }">
+  <div class="flex gap-3">
+    <div class="w-[70%]">
+      <Panel :header="$t('selectPaymentMethod')" toggleable>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="cursor-pointer">
+            <Card>
+              <template #content>
+                  <p class="m-0 flex items-center gap-3">
+                    <i class="pi pi-credit-card" style="font-size: 2rem"></i>
+                    <span>{{$t('creditCard')}}</span>
+                  </p>
+              </template>
+            </Card>
+          </div>
+          <div class="cursor-pointer">
+            <Card>
+              <template #content>
+                <p class="m-0 flex items-center gap-3">
+                  <i class="pi pi-paypal" style="font-size: 2rem"></i>
+                  <span>{{$t('payPal')}}</span>
+                </p>
+              </template>
+            </Card>
+          </div>
+          <div class="cursor-pointer">
+            <Card>
+              <template #content>
+                <p class="m-0 flex items-center gap-3">
+                  <i class="pi pi-building-columns" style="font-size: 2rem"></i>
+                  <span>{{$t('bankTransfer')}}</span>
+                </p>
+              </template>
+            </Card>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 mt-6 mb-5">
+          <span class="pt-4">
+            <FloatLabel variant="on">
+              <InputText id="on_label" v-model="value3" class="w-full bg-white" />
+              <label for="on_label">{{$t('nameOnCard')}}<span class="text-red-600">*</span></label>
+            </FloatLabel>
+          </span>
+        </div>
+        <div class="grid grid-cols-1 mt-6 mb-5">
+          <span class="pt-4">
+            <IconField>
+              <InputText v-model="value2" placeholder="0000 - 0000 - 0000" class="w-full bg-white"/>
+              <InputIcon class="pi pi-credit-card"/>
+            </IconField>
+          </span>
+        </div>
+        <div class="grid grid-cols-1 mt-6">
+          <span class="pt-4">
+            <DatePicker 
+            v-model="icondisplay" 
+            showIcon 
+            fluid 
+            iconDisplay="input" 
+            placeholder="00/00/0000" 
+            dateFormat="dd/mm/yy"
+            />
+          </span>
+        </div>
+      </Panel>
+    </div>
+    <div class="w-[30%]">
+      <Panel :header="$t('orderSummary')" toggleable>
+        <p class="m-0">
+            Coming Soon!
+        </p>
+      </Panel>
+    </div>
+  </div>
+</Dialog>
