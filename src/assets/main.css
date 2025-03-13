@@ -1,14 +1,24 @@
 @import "primeicons/primeicons.css";
 
+/***
+  * Download from from google font
+***/
 @font-face {
-  font-family: "Koulen-Regular";
-  src: url("../utils/fonts/Koulen-Regular.ttf") format("truetype");
+  font-family: "Battambang-Light";
+  src: url("../utils/fonts/Battambang-Light.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Regular.ttf";
+  src: url("../utils/fonts/static/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
 }
 
 body.khmer-mode {
-  font-family: "Koulen-Regular";
+  font-family: "Battambang-Light";
+}
+body.english-mode {
+  font-family: "Roboto-Regular.ttf";
 }
 
 ::selection {

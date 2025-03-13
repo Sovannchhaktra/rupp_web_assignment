@@ -17,13 +17,13 @@
           />
         </svg>
       </div>
-      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">{{$t('menuHome')}} /</p>
+      <p class="text-[1.2rem]   text-slate-500">{{$t('menuHome')}} /</p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">{{$t('contactUs')}}</p>
+    <p class="text-[1.2rem]   text-slate-900">{{$t('contactUs')}}</p>
   </div>
   <div class="w-full flex gap-20 mt-8">
     <div class="w-[30%]">
-      <p class="font-medium text-xl font-roboto text-slate-900">{{$t('followUs')}}</p>
+      <p class=" text-xl  text-slate-900">{{$t('followUs')}}</p>
       <ul class="mt-6 flex flex-col gap-6">
         <li v-for="(items, index) in followUs">
           <router-link
@@ -35,13 +35,13 @@
               src="../../assets/images/Facebook_logo_(square).png"
               alt=""
             />
-            <span class="font-roboto">Facebook</span>
+            <span class="">Facebook</span>
           </router-link>
         </li>
       </ul>
     </div>
     <div class="w-[70%]">
-      <p class="font-medium text-xl text-slate-900 font-roboto">{{$t('feedback')}}</p>
+      <p class=" text-xl text-slate-900 ">{{$t('feedback')}}</p>
       <form>
         <div class="grid grid-cols-2 mb-5">
           <span class="pt-4 pr-3">
@@ -83,7 +83,7 @@
         </div>
         <div class="grid grid-cols-1">
           <span class="pt-4 pr-3">
-            <label for="code" class="mb-2 font-medium font-roboto text-gray-700"
+            <label for="code" class="mb-2   text-gray-700"
               >{{$t('reason')}}<span class="text-red-600">*</span></label
             >
             <Editor :api-key="apiKey" :init="initOptions" />

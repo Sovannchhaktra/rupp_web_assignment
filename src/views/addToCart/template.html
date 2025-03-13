@@ -17,9 +17,9 @@
           />
         </svg>
       </div>
-      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">{{$t('menuHome')}} /</p>
+      <p class="text-[1.2rem]   text-slate-500">{{$t('menuHome')}} /</p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">{{$t('menuProducts')}}</p>
+    <p class="text-[1.2rem]   text-slate-900">{{$t('menuProducts')}}</p>
   </div>
   <div class="w-full flex gap-5 mt-5">
     <div class="bg-white h-fit w-[70%] p-4 rounded-md shadow-md">
@@ -33,18 +33,18 @@
         </div>
         <div class="w-full flex flex-col gap-5">
           <div class="flex justify-between">
-            <div class="font-roboto">
+            <div class="">
               <p class="text-xl text-gray-700 font-bold">Fit T-Shirt</p>
               <p class="text-[12px] text-gray-700">
                 $12.99 &nbsp;&nbsp;&nbsp;<span
-                  class="text-green-500 font-medium"
+                  class="text-green-500 "
                   >{{$t('inStock')}}</span
                 >
               </p>
             </div>
-            <span class="font-roboto font-bold text-slate-900">$64.95</span>
+            <span class=" font-bold text-slate-900">$64.95</span>
           </div>
-          <div class="flex justify-between font-roboto text-[13px]">
+          <div class="flex justify-between  text-[13px]">
             <span class="bg-white border rounded-md py-1 px-7 text-slate-900">XL</span>
             <span class="bg-white border rounded-md py-1 px-7 text-slate-900">Blue</span>
             
@@ -64,7 +64,7 @@
                 />
               </svg>
 
-              <span class="font-medium text-slate-700">{{$t('save')}}</span>
+              <span class=" text-slate-700">{{$t('save')}}</span>
             </div>
             <div
               class="flex items-center gap-1 justify-center cursor-pointer py-1 px-2 border bg-red-100 rounded-md"
@@ -81,16 +81,16 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="font-medium text-slate-700">{{$t('delete')}}</span>
+              <span class=" text-slate-700">{{$t('delete')}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="bg-white shadow-md h-fit w-[30%] rounded-md p-4">
-      <span class="font-roboto font-medium text-slate-900">{{$t('delivery')}}</span>
+      <span class="  text-slate-900">{{$t('delivery')}}</span>
       <div
-        class="bg-gray-400 w-fit flex gap-2 p-1 px-1 rounded-md font-roboto mt-5"
+        class="bg-gray-400 w-fit flex gap-2 p-1 px-1 rounded-md  mt-5"
       >
         <span class="text-center bg-white shadow-md py-1 px-2 rounded-md text-slate-900"
           >{{$t('free')}}</span
@@ -98,7 +98,7 @@
         <span class="text-center py-1 px-2">Express: $9.99</span>
       </div>
       <div>
-        <p class="text-gray-400 font-roboto text-sm mt-1">
+        <p class="text-gray-400  text-sm mt-1">
           {{$t('deliveryDate')}}: January,27,2024
         </p>
       </div>
@@ -106,16 +106,16 @@
       <div class="mt-6 flex items-center">
         <InputText id="on_label" v-model="value3" type="number" :placeholder="$t('promocode')" class="border outline-none rounded-l-md py-1 px-4 w-60 text-[15px] d" />
         <button
-          class="bg-gray-300 border border-gray-500 text-slate-900 py-2 px-2 rounded-r-md font-roboto text-[15px]"
+          class="bg-gray-300 border border-gray-500 text-slate-900 py-2 px-2 rounded-r-md  text-[15px]"
         >
           {{$t('apply')}}
         </button>
       </div>
       <div>
-        <p class="text-gray-400 font-roboto text-sm mt-1">20% {{$t('offDiscount')}}</p>
+        <p class="text-gray-400  text-sm mt-1">20% {{$t('offDiscount')}}</p>
       </div>
       <hr class="mt-6" />
-      <div class="mt-6 mb-6 font-roboto text-[15px] flex flex-col gap-2 text-slate-800">
+      <div class="mt-6 mb-6  text-[15px] flex flex-col gap-2 text-slate-800">
         <div class="flex justify-between">
           <span>{{$t('subtotal')}}</span>
           <span>$00.00</span>
@@ -135,13 +135,13 @@
         <hr class="mt-5" />
         <div class="flex justify-between mt-5">
           <span>{{$t('total')}}</span>
-          <span class="text-blue-500 font-medium" >$78.76</span>
+          <span class="text-blue-500 " >$78.76</span>
         </div>
       </div>
       <button
         @click="visible = true"
         type="button"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md font-roboto text-sm w-full px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  rounded-md  text-sm w-full px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
       >
         {{$t('proceedToCheckout')}}
       </button>

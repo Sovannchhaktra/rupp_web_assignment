@@ -17,12 +17,12 @@
           />
         </svg>
       </div>
-      <p class="text-[1.2rem] font-roboto font-medium text-slate-500">{{$t('menuHome')}} / </p>
+      <p class="text-[1.2rem]   text-slate-500">{{$t('menuHome')}} / </p>
     </router-link>
-    <p class="text-[1.2rem] font-roboto font-medium text-slate-900">{{$t('signInAccount')}}</p>
+    <p class="text-[1.2rem]   text-slate-900">{{$t('signInAccount')}}</p>
   </div>
   <div class="mt-9">
-    <span v-if="!isNext" class="text-xl font-roboto border-b-2 font-medium text-slate-900">{{$t('persional')}}</span>
+    <span v-if="!isNext" class="text-xl  border-b-2  text-slate-900">{{$t('persional')}}</span>
     <form v-if="!isNext"  class="mb-8 mt-6">
       <div class="grid grid-cols-2">
         <span class="pt-4 pr-3">
@@ -125,7 +125,7 @@
     <form class="mb-8 flex justify-center" v-if="isNext">
       <div class="flex flex-col items-center shadow-2xl rounded-md p-8 w-[20rem] mt-16 mb-16">
         <img class="w-24" src="../../assets/icons/password.png" alt="">
-        <span class="text-lg font-roboto  font-medium text-slate-900 mb-8 mt-3">{{$t('enterOtpCode')}}</span>
+        <span class="text-lg    text-slate-900 mb-8 mt-3">{{$t('enterOtpCode')}}</span>
         <InputOtp 
         :length="5" 
         v-model="value"/>
