@@ -1,4 +1,28 @@
 <div class="w-full">
+    <div class="w-full mb-7">
+        <Galleria 
+            :value="images" 
+            :responsiveOptions="responsiveOptions" 
+            :numVisible="5" 
+            containerStyle="max-width: 100%"
+            :circular="true" 
+            :autoPlay="true" 
+            :transitionInterval="2000">
+            <template #item="slotProps">
+                <img 
+                    :src="slotProps.item.itemImageSrc" 
+                    :alt="slotProps.item.alt" 
+                    style="width: 100%; 
+                    display: block" />
+            </template>
+            <template #thumbnail="slotProps">
+                <img 
+                    :src="slotProps.item.thumbnailImageSrc" 
+                    :alt="slotProps.item.alt" 
+                    style="display: block" />
+            </template>
+        </Galleria>
+    </div>
     <h2 class="text-2xl font-bold text-black mb-7">{{$t('homeNewProduct')}}</h2> 
     <Loader v-if="isLoading"/> 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
