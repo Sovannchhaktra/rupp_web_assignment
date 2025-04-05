@@ -108,3 +108,11 @@ body.english-mode {
   border: 0.2px solid #b5b5b5 !important;
   border-radius: 0 !important;
 }
+
+/* .p-skeleton {
+  background: #b5b5b5 !important;
+} */
+
+.p-galleria-thumbnails-content {
+  background: unset !important;
+}

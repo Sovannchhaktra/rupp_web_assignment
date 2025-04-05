@@ -1,8 +1,8 @@
 <div class="w-full">
-    <div class="w-full mb-7">
+    <Skeleton v-if="isLoading" class="w-full mb-7" height="350px"></Skeleton>
+    <div v-else class="w-full mb-7">
         <Galleria 
-            :value="images" 
-            :responsiveOptions="responsiveOptions" 
+            :value="advertisement" 
             :numVisible="5" 
             containerStyle="max-width: 100%"
             :circular="true" 
@@ -23,12 +23,13 @@
             </template>
         </Galleria>
     </div>
-    <h2 class="text-2xl font-bold text-black mb-7">{{$t('homeNewProduct')}}</h2> 
-    <Loader v-if="isLoading"/> 
+    <Skeleton v-if="isLoading" width="10rem" height="3rem" class="mb-7"></Skeleton>
+    <h2 v-else class="text-2xl font-bold text-black mb-7">{{$t('homeNewProduct')}}</h2> 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
       <!-- Product Card -->
       <div v-for="item in lists">
-        <router-link to="/product/detail/1">
+        <Skeleton v-if="isLoading" class="w-full" height="450px"></Skeleton>
+        <router-link v-else to="/product/detail/1">
             <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
                 <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
                 <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
@@ -57,11 +58,13 @@
   </div>
 </div>
 <div class="w-full mt-7">
-  <h2 class="text-2xl font-bold text-black mb-7">{{$t('homePopularProducts')}}</h2>
+  <Skeleton v-if="isLoading" width="10rem" height="3rem" class="mb-7"></Skeleton>
+  <h2 v-else class="text-2xl font-bold text-black mb-7">{{$t('homePopularProducts')}}</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
       <!-- Product Card -->
       <div v-for="item in lists">
-        <router-link to="/product/detail/1">
+        <Skeleton v-if="isLoading" class="w-full" height="450px"></Skeleton>
+        <router-link v-else to="/product/detail/1">
             <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
                 <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
                 <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
@@ -89,11 +92,13 @@
   </div>
 </div>
 <div class="w-full mt-7">
-    <h2 class="text-2xl font-bold text-black mb-7">{{$t('homePromotionProducts')}}</h2>
+    <Skeleton v-if="isLoading" width="10rem" height="3rem" class="mb-7"></Skeleton>
+    <h2 v-else class="text-2xl font-bold text-black mb-7">{{$t('homePromotionProducts')}}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
         <!-- Product Card -->
       <div v-for="item in lists">
-        <router-link to="/product/detail/1">
+        <Skeleton v-if="isLoading" class="w-full" height="450px"></Skeleton>
+        <router-link v-else to="/product/detail/1">
             <div class="bg-gray-50 w-full p-1 relative shadow-sm rounded-sm">
                 <div class="bg-yel-500 w-1/2 text-center absolute top-1 left-1 h-12 flex items-center justify-center">
                 <p class="text-white text-lg font-semibold">{{$t('homePromotion')}}</p>
