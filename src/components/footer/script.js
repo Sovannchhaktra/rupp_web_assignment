@@ -7,6 +7,7 @@ export default {
       icons: IconJson,
     };
   },
+  mounted() {},
   created() {},
-  methods: {},
+  methods: {}
 };

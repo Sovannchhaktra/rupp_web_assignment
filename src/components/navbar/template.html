@@ -30,6 +30,15 @@
       </ul>
     </div>
     <div class="flex justify-between items-center gap-3">
+      <i 
+        @click="toggleableMap = !toggleableMap" 
+        class="pi pi-map-marker" 
+        :style="{
+          fontSize: '1.5rem',
+          color: toggleableMap ? 'red' : 'black',
+          cursor: 'pointer'
+        }"
+      ></i>
       <div>
         <img
           @click="isLanguage = !isLanguage"
@@ -105,4 +114,9 @@
       </div>
     </div>
   </div>
+</div>
+<div v-if="toggleableMap" class="fixed z-20 top-[5.6rem]">
+  <Panel :header="$t('headerTitleMap')">
+    <div id="google-map" style="height: 550px; width: 100%;"></div>
+  </Panel>
 </div>
