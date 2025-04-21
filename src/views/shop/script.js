@@ -1,4 +1,6 @@
 import Paginator from 'primevue/paginator';
+import ShopService from '@/utils/services/ShopService';
+
 export default {  
     data() {  
       return {  
@@ -19,7 +21,10 @@ export default {
           { id: 4, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
         ],  
       };  
-    },  
+    }, 
+    created() {
+      this.getList();
+    }, 
     components: {
       Paginator
     },
@@ -28,6 +33,20 @@ export default {
           console.log("Page changed:", event);
           this.pFirst = event.first;
           this.numRecord = event.rows;
+      },
+      getList() {
+          this.isLoading = true;
+          ShopService.getList().then((res)=>{
+            this.isLoading = false;
+            if(res.status === 200) {
+              this.data = res.data.data;
+              console.log(this.data)
+            }else {
+              console.log("Service not found")
+            }
+          }).catch((error) => {
+            this.isLoading = false;
+          });
       }
     },
     props: {  

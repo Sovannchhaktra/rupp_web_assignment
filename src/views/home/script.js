@@ -12,38 +12,7 @@ export default {
       lists: 4,
       myData: "Hello world",
       isLoading: false,
-      advertisement: [
-        {
-          itemImageSrc: 'https://placehold.co/100x35',
-          thumbnailImageSrc: 'https://placehold.co/60x60',
-          alt: 'Description for Image 1',
-          title: 'Title 1'
-        },
-        {
-          itemImageSrc: 'https://placehold.co/100x35',
-          thumbnailImageSrc: 'https://placehold.co/60x60',
-          alt: 'Description for Image 1',
-          title: 'Title 1'
-        },
-        {
-          itemImageSrc: 'https://placehold.co/100x35',
-          thumbnailImageSrc: 'https://placehold.co/60x60',
-          alt: 'Description for Image 1',
-          title: 'Title 1'
-        },
-        {
-          itemImageSrc: 'https://placehold.co/100x35',
-          thumbnailImageSrc: 'https://placehold.co/60x60',
-          alt: 'Description for Image 1',
-          title: 'Title 1'
-        },
-        {
-          itemImageSrc: 'https://placehold.co/100x35',
-          thumbnailImageSrc: 'https://placehold.co/60x60',
-          alt: 'Description for Image 1',
-          title: 'Title 1'
-        },
-      ]
+      advertisement: []
     };
   },
   components: {
@@ -52,8 +21,8 @@ export default {
     Skeleton
   },
   created() {
-    // this.getListAdvertisement();
-    // this.getList();
+    this.getListAdvertisement();
+    this.getList();
   },
   methods: {
     getListAdvertisement() {
@@ -61,6 +30,14 @@ export default {
       AdvertisementService.getList().then((res) => {
         this.isLoading = false;
         if(res.status === 200) {
+          this.advertisement = [
+            {
+              itemImageSrc: 'https://placehold.co/100x35',
+              thumbnailImageSrc: 'https://placehold.co/60x60',
+              alt: 'Description for Image 1',
+              title: 'Title 1'
+            }
+          ]
           console.log(res)
         } 
       }).catch((error) => {

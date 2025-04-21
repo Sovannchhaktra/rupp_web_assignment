@@ -4,7 +4,10 @@ const type = "/api";
 const ApiContant = {
     home: baseUrl + type + "",
     products: baseUrl + type + "/products",
-    advertisement: baseUrl + type + "/advertisements"
+    advertisement: baseUrl + type + "/advertisements",
+    productsType: baseUrl + type + "/product/type",
+    productsDetail: baseUrl + type + "/products",
+    shop: baseUrl + type + "/product/shop",
 }
 
 export default ApiContant;

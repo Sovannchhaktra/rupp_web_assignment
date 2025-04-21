@@ -1,11 +1,13 @@
-
 import InputText from 'primevue/inputtext';
 import Select from 'primevue/select';
+import ProductsDetailService from '@/utils/services/ProductDetailService';
 
 export default {
     name: "Detail",
     data() {
       return {
+        id: this.$route.params.id,
+        data: {},
         size: [
           { name: 'XS', code: 'XS' },
           { name: 'S', code: 'S' },
@@ -26,11 +28,27 @@ export default {
         selectedColor: { name: 'Red', code: 'RED' }
       };
     },
+    created() {
+      this.getDetail()
+    },
     components: {
       InputText,
       Select
     },
     methods: {
-      
+      getDetail() {
+        this.isLoading = true;
+        ProductsDetailService.getDetail(this.id).then((res)=>{
+          this.isLoading = false;
+          if(res.status === 200) {
+            this.data = res.data.data;
+            console.log(this.data)
+          }else {
+            console.log("Service not found")
+          }
+        }).catch((error) => {
+          this.isLoading = false;
+        });
+      }
     },
   };
