@@ -13,8 +13,7 @@ import {ref,computed} from 'vue'
         
       },
       mounted() {
-        const token = "12345abcde";
-        sessionStorage.setItem("accessToken", token);
+        
       },
     };
 </script>

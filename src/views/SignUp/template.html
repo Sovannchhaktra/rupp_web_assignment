@@ -27,57 +27,75 @@
       <div class="grid grid-cols-2 mb-5">
         <span class="pt-4 pr-3">
           <FloatLabel variant="on">
-            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
-            <label for="on_label">{{$t('firstName')}}<span class="text-red-600">*</span></label>
+            <InputText id="firstName" v-model="firstName" class="w-full bg-white" />
+            <label for="firstName">{{$t('firstName')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
+        <p v-if="errMessage && errCode == 1" class="text-red-500 text-xs">{{ errMessage }}</p>
         </span>
         <span class="pt-4 pr-3">
           <FloatLabel variant="on">
-            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
-            <label for="on_label">{{$t('lastName')}}<span class="text-red-600">*</span></label>
+            <InputText id="lastName" v-model="lastName" class="w-full bg-white" />
+            <label for="lastName">{{$t('lastName')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
+        <p v-if="errMessage && errCode == 2" class="text-red-500 text-xs">{{ errMessage }}</p>
         </span>
       </div>
       <div class="grid grid-cols-2 mb-5">
         <span class="pt-4 pr-3">
           <Select 
-            v-model="selectedCity" 
-            :options="cities" 
+            v-model="gender" 
+            :options="genderOption" 
             optionLabel="name" 
             :placeholder="$t('selectGender')" 
             class="w-full md:w-56" />
+            <p v-if="errMessage && errCode == 5" class="text-red-500 text-xs">{{ errMessage }}</p>
         </span>
         <span class="pt-4 pr-3">
           <FloatLabel variant="on">
-            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
-            <label for="on_label">{{$t('phone')}}<span class="text-red-600">*</span></label>
+            <InputText id="phone" v-model="phone" class="w-full bg-white" />
+            <label for="phone">{{$t('phone')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
+        <p v-if="errMessage && errCode == 3" class="text-red-500 text-xs">{{ errMessage }}</p>
         </span>
       </div>
       <div class="grid grid-cols-1 mb-5">
         <span class="pt-4 pr-3">
           <FloatLabel variant="on">
-            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
-            <label for="on_label">{{$t('email')}}<span class="text-red-600">*</span></label>
+            <InputText id="email" v-model="email" class="w-full bg-white" />
+            <label for="email">{{$t('email')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
+        <p v-if="errMessage && errCode == 4" class="text-red-500 text-xs">{{ errMessage }}</p>
         </span>
       </div>
       <div class="grid grid-cols-2 mb-5">
         <span class="pt-4 pr-3">
           <Select 
-            v-model="selectedCity" 
-            :options="cities" 
+            filter
+            v-model="country" 
+            :options="countries" 
             optionLabel="name" 
             :placeholder="$t('selectCountry')"  
             class="w-full md:w-56" />
+            <p v-if="errMessage && errCode == 6" class="text-red-500 text-xs">{{ errMessage }}</p>
         </span>
         <span class="pt-4 pr-3">
           <Select 
-            v-model="selectedCity" 
-            :options="cities" 
+            filter
+            v-model="cityProvince" 
+            :options="province" 
             optionLabel="name" 
             :placeholder="$t('selectCityProvince')" 
             class="w-full md:w-56" />
+            <p v-if="errMessage && errCode == 7" class="text-red-500 text-xs">{{ errMessage }}</p>
+        </span>
+      </div>
+      <div class="grid grid-cols-1 mb-5">
+        <span class="pt-4 pr-3">
+          <FloatLabel variant="on">
+            <InputText id="password" v-model="password" type="password" class="w-full bg-white" />
+            <label for="password">Password<span class="text-red-600">*</span></label>
+        </FloatLabel>
+        <p v-if="errMessage && errCode == 8" class="text-red-500 text-xs">{{ errMessage }}</p>
         </span>
       </div>
 
@@ -95,18 +113,24 @@
 
         <span class="pt-4 pr-3">
           <button
+            v-if="!isSubmited"
+            type="button"
+            @click="onCreate"
             class="w-full text-white bg-blue-700 hover:bg-yel-500 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
           >
             {{$t('createAccount')}}
           </button>
-          <!-- <button
+          <button
             v-else
-            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 text-center"
+            disabled
+            class="w-full text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
           >
             Loading...
-          </button> -->
+          </button>
         </span>
       </div>
     </form>
   </div>
 </div>
+
+<Dialog v-model:visible="visible" modal header="Create Account Successfully" :style="{ width: '25rem' }"></Dialog>

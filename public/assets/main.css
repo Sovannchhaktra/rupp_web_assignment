@@ -120,9 +120,3 @@ body.english-mode {
 .p-galleria-thumbnails {
   display: none !important;
 }
-
-.p-galleria-content img {
-  height: 370px !important;
-  object-position: center !important;
-  display: block !important;
-}

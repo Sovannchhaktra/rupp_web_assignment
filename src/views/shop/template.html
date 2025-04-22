@@ -33,11 +33,20 @@
     <div class="w-1/4 p-5">  
       <h2 class="text-xl font-bold text-black">{{ $t('shopCategories') }}</h2>  
       <ul class="menu-category mb-5 font-bold">  
-        <li class="my-3 px-2 text-black">{{ $t('shopMan') }}</li>  
-        <li class="bg-yellow-500 rounded py-3 px-2 text-white">{{ $t('shopBoy') }}</li>  
-        <li class="my-3 text-black">{{ $t('shopWoman') }}</li>  
-        <li class="bg-yellow-500 rounded py-3 px-2 text-white">{{ $t('shopGirl') }}</li>  
-      </ul>  
+        <li class="my-3 px-2 text-black hover:bg-gray-200 hover:text-black rounded py-3 transition-all duration-200 cursor-pointer">
+          {{ $t('shopMan') }}
+        </li>  
+        <li class="bg-yellow-500 rounded py-3 px-2 text-white hover:bg-gray-200 hover:text-black transition-all duration-200 cursor-pointer">
+          {{ $t('shopBoy') }}
+        </li>  
+        <li class="my-3 px-2 text-black hover:bg-gray-200 hover:text-black rounded py-3 transition-all duration-200 cursor-pointer">
+          {{ $t('shopWoman') }}
+        </li>  
+        <li class="bg-yellow-500 rounded py-3 px-2 text-white hover:bg-gray-200 hover:text-black transition-all duration-200 cursor-pointer">
+          {{ $t('shopGirl') }}
+        </li>  
+      </ul>
+      
 
       <h2 class="text-xl font-bold mt-10 text-black">{{ $t('homePromotion') }}</h2>  
       <button class="btn border border-red-400 rounded text-red-400 p-1 hover:bg-red-500 ease-in-out transition-transform duration-1000 hover:text-white mb-5 mt-3 ">{{ $t('homePromotion') }}</button>  

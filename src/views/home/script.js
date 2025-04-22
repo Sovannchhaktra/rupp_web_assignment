@@ -4,15 +4,17 @@ import Galleria from 'primevue/galleria';
 import HomeService from "@/utils/services/HomeService";
 import AdvertisementService from "@/utils/services/AdvertisementService";
 
+import advertisementJson from '@/utils/json/advertisement.json'
+
 export default {
   name: "Home",
   data() {
     return {
       star: 5,
       lists: 4,
-      myData: "Hello world",
+      objs: [],
       isLoading: false,
-      advertisement: []
+      advertisement: advertisementJson
     };
   },
   components: {
@@ -21,7 +23,7 @@ export default {
     Skeleton
   },
   created() {
-    this.getListAdvertisement();
+    // this.getListAdvertisement();
     this.getList();
   },
   methods: {
@@ -32,13 +34,13 @@ export default {
         if(res.status === 200) {
           this.advertisement = [
             {
-              itemImageSrc: 'https://placehold.co/100x35',
-              thumbnailImageSrc: 'https://placehold.co/60x60',
+              itemImageSrc: '../../assets/images/04.png',
+              thumbnailImageSrc: '../../assets/images/04.png',
               alt: 'Description for Image 1',
               title: 'Title 1'
             }
           ]
-          console.log(res)
+          console.log(this.advertisement)
         } 
       }).catch((error) => {
         this.isLoading = false;
@@ -50,7 +52,8 @@ export default {
       HomeService.getList().then((res)=>{
         this.isLoading = false;
         if(res.status === 200) {
-          console.log(res)
+          this.objs = res.data.data;
+          console.log(this.objs)
         }else {
           console.log("Service not found")
         }

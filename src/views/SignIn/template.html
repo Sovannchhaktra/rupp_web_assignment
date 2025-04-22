@@ -22,29 +22,32 @@
     <p class="text-[1.2rem]   text-slate-900">{{$t('signInAccount')}}</p>
   </div>
   <div class="mt-9">
-    <span v-if="!isNext" class="text-xl  border-b-2  text-slate-900">{{$t('persional')}}</span>
-    <form v-if="!isNext"  class="mb-8 mt-6">
+    <span class="text-xl  border-b-2  text-slate-900">{{$t('persional')}}</span>
+    <form class="mb-8 mt-6">
       <div class="grid grid-cols-2">
         <span class="pt-4 pr-3">
           <FloatLabel variant="on">
-            <InputText id="on_label" v-model="value3" class="w-full bg-white" />
-            <label for="on_label">{{$t('email')}}<span class="text-red-600">*</span></label>
+            <InputText id="email" v-model="email" class="w-full bg-white" />
+            <label for="email">{{$t('email')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
+        <div v-if="errMessage && errCode == 1" class="row text-red-500">
+          {{errMessage}}
+        </div>
         </span>
       </div>
       <div class="grid grid-cols-2 mt-5">
         <span class="pt-4 pr-3 relative">
           <FloatLabel variant="on">
             <InputText 
-            id="on_label" 
-            v-model="value3" 
+            id="password" 
+            v-model="password" 
             :type="isPassword ? 'password' : 'text'"
             class="w-full bg-white" />
-            <label for="on_label">{{$t('password')}}<span class="text-red-600">*</span></label>
+            <label for="password">{{$t('password')}}<span class="text-red-600">*</span></label>
         </FloatLabel>
-          <!-- <div v-if="isSubmited && !body.gender" class="row text-red-800">
-            Code is required.
-          </div> -->
+        <div v-if="errMessage && errCode == 2" class="row text-red-500">
+          {{errMessage}}
+        </div>
 
           <div class="absolute top-[1.5rem] right-6">
             <svg
@@ -105,24 +108,26 @@
 
         <span class="pt-4 pr-3">
           <button
-            @click="isNext = true"
+            v-if="!isSubmited"
+            @click="onSubmit()"
+            type="button"
             class="w-full text-white bg-blue-700 hover:bg-yel-500 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
           >
             {{$t('login')}}
           </button>
-          <!-- <button
+          <button
             v-else
-            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 text-center"
+            class="w-full text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md py-2 px-3 text-center"
           >
             Loading...
-          </button> -->
+          </button>
         </span>
       </div>
     </form>
 
     <!-- OTP -->
 
-    <form class="mb-8 flex justify-center" v-if="isNext">
+    <!-- <form class="mb-8 flex justify-center" v-if="isNext">
       <div class="flex flex-col items-center shadow-2xl rounded-md p-8 w-[20rem] mt-16 mb-16">
         <img class="w-24" src="../../assets/icons/password.png" alt="">
         <span class="text-lg    text-slate-900 mb-8 mt-3">{{$t('enterOtpCode')}}</span>
@@ -132,6 +137,8 @@
         <p class="mt-2 text-sm text-red-400">{{$t('expriedCode')}}: 00:59</p>
         <p class="text-slate-400 mt-4">{{$t('receiveCode')}}? <button class="text-blue-500">{{$t('resend')}}</button></p>
       </div>
-    </form>
+    </form> -->
   </div>
 </div>
+
+<Dialog v-model:visible="visible" modal header="Login Successfully" :style="{ width: '25rem' }"></Dialog>

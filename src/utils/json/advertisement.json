@@ -1,0 +1,33 @@
+[
+    {
+      "itemImageSrc": "04.png",
+      "thumbnailImageSrc": "04.png",
+      "alt": "Description for Image 1",
+      "title": "Title 1"
+    },
+    {
+      "itemImageSrc": "07.png",
+      "thumbnailImageSrc": "07.png",
+      "alt": "Description for Image 2",
+      "title": "Title 2"
+    },
+    {
+      "itemImageSrc": "09.png",
+      "thumbnailImageSrc": "09.png",
+      "alt": "Description for Image 3",
+      "title": "Title 3"
+    },
+    {
+      "itemImageSrc": "25.png",
+      "thumbnailImageSrc": "25.png",
+      "alt": "Description for Image 4",
+      "title": "Title 4"
+    },
+    {
+      "itemImageSrc": "b2.avif",
+      "thumbnailImageSrc": "b2.avif",
+      "alt": "Description for Image 5",
+      "title": "Title 5"
+    }
+]
+  

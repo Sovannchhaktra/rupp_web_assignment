@@ -12,6 +12,8 @@ import "./assets/main.css"
 import kh from './utils/json/i18n/kh.json';
 import en from './utils/json/i18n/en.json';
 
+import ToastService from 'primevue/toastservice';
+
 // Create i18n instance
 const i18n = createI18n({
     legacy: false,  // Required for Vue 3 Composition API
@@ -21,7 +23,7 @@ const i18n = createI18n({
 });
 
 const app = createApp(App);
-
+app.use(ToastService);
 // Use the router
 app.use(router);
 // Use the vuex

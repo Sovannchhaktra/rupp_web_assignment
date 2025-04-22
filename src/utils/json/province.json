@@ -1,0 +1,26 @@
+[
+    { "name": "Banteay Meanchey", "code": "BME" },
+    { "name": "Battambang", "code": "BTB" },
+    { "name": "Kampong Cham", "code": "KCH" },
+    { "name": "Kampong Chhnang", "code": "KCN" },
+    { "name": "Kampong Speu", "code": "KPS" },
+    { "name": "Kampot", "code": "KPT" },
+    { "name": "Kandal", "code": "KDL" },
+    { "name": "Kep", "code": "KEP" },
+    { "name": "Koh Kong", "code": "KKG" },
+    { "name": "Kratie", "code": "KRT" },
+    { "name": "Mondulkiri", "code": "MDK" },
+    { "name": "Oddar Meanchey", "code": "ODM" },
+    { "name": "Pailin", "code": "PLN" },
+    { "name": "Phnom Penh", "code": "PNH" },
+    { "name": "Preah Sihanouk", "code": "PSK" },
+    { "name": "Preah Vihear", "code": "PVH" },
+    { "name": "Pursat", "code": "PST" },
+    { "name": "Ratanakiri", "code": "RTK" },
+    { "name": "Siem Reap", "code": "SRP" },
+    { "name": "Stung Treng", "code": "STG" },
+    { "name": "Svay Rieng", "code": "SVR" },
+    { "name": "Takeo", "code": "TKO" },
+    { "name": "Tboung Khmum", "code": "TBK" }
+]
+  

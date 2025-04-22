@@ -8,6 +8,9 @@ const ApiContant = {
     productsType: baseUrl + type + "/product/type",
     productsDetail: baseUrl + type + "/products",
     shop: baseUrl + type + "/product/shop",
+    country: baseUrl + type + "/countries",
+    register: baseUrl + type + "/register",
+    login: baseUrl + type + "/login",
 }
 
 export default ApiContant;
