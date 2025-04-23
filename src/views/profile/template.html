@@ -93,7 +93,7 @@
         <div class="grid mb-3">
           <span class="pt-4 pr-3">
             <Select 
-            v-model="genderSelected" 
+            v-model="selectedGender" 
             :options="genderOption" 
             optionLabel="name" 
             :disabled="isFormDisabled"
@@ -118,7 +118,7 @@
           <span class="pt-4 pr-3">
             <Select 
               v-model="selectedCity" 
-              :options="cities" 
+              :options="countries" 
               optionLabel="name" 
               :disabled="isFormDisabled"
               :placeholder="$t('selectCountry')" 
@@ -128,8 +128,8 @@
         <div class="grid mb-3">
           <span class="pt-4 pr-3">
             <Select 
-              v-model="selectedCity" 
-              :options="cities" 
+              v-model="selectedProvince" 
+              :options="province" 
               optionLabel="name" 
               :disabled="isFormDisabled"
               :placeholder="$t('selectCityProvince')" 

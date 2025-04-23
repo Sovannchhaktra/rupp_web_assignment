@@ -3,9 +3,9 @@
     <span class="mb-4 text-slate-900  text-2xl font-bold">{{$t('allProducts')}}</span>
     <span class="flex items-center">
       <FloatLabel variant="on">
-        <InputText id="on_label" :placeholder="$t('search')" class="w-full bg-white" />
+        <InputText id="on_label" v-model="searchQuery" :placeholder="$t('search')" class="w-full bg-white" />
       </FloatLabel>
-      <button class="bg-blue-500 no-underline p-[7.7px] h-full border rounded-r-sm text-white">
+      <button @click="handleSearch" class="bg-blue-500 no-underline p-[7.7px] h-full border rounded-r-sm text-white">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-slate-50 font-bold">
           <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </svg>        
@@ -28,12 +28,12 @@
         <div class="w-full p-2">
           <div v-if="item.sale_price != '0.00'" class="flex gap-3">
             <del class="text-red-500 text-lg">{{item.regular_price}}</del>
-            <p class="text-lg font-semibold text-gray-900">{{item.sale_price}} (USD)</p>
+            <p class="text-lg font-semibold text-gray-900">{{item.sale_price}} USD</p>
           </div>
           <div v-else class="flex gap-3">
-            <p class="text-lg font-semibold text-gray-900">{{item.regular_price}} (USD)</p>
+            <p class="text-lg font-semibold text-gray-900">{{item.regular_price}} USD</p>
           </div>
-          <p class="text-xl  text-slate-900">{{item.name}}</p>
+          <p class="text-xl text-limited text-slate-900">{{item.name}}</p>
           <span class="flex gap-2">
             <svg
             v-for="i in item.star"

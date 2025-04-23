@@ -12,7 +12,11 @@ export default {
     return {
       star: 5,
       lists: 4,
-      objs: [],
+      objs: {
+        newPro: [],
+        topRatePro: [],
+        promotionPro: []
+      },
       isLoading: false,
       advertisement: advertisementJson
     };
@@ -49,17 +53,40 @@ export default {
 
     getList() {
       this.isLoading = true;
-      HomeService.getList().then((res)=>{
+      HomeService.getNewProducts().then((res)=>{
         this.isLoading = false;
         if(res.status === 200) {
-          this.objs = res.data.data;
-          console.log(this.objs)
+          this.objs.newPro = res.data.data;
         }else {
           console.log("Service not found")
         }
       }).catch((error) => {
         this.isLoading = false;
       });
+
+      HomeService.getTopRateProducts().then((res)=>{
+        this.isLoading = false;
+        if(res.status === 200) {
+          this.objs.topRatePro = res.data.data;
+        }else {
+          console.log("Service not found")
+        }
+      }).catch((error) => {
+        this.isLoading = false;
+      });
+
+      HomeService.getPromotionProducts().then((res)=>{
+        this.isLoading = false;
+        if(res.status === 200) {
+          this.objs.promotionPro = res.data.data;
+        }else {
+          console.log("Service not found")
+        }
+      }).catch((error) => {
+        this.isLoading = false;
+      });
+
+      console.log(this.objs)
     }
   }
 };

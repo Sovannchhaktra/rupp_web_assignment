@@ -126,3 +126,12 @@ body.english-mode {
   object-position: center !important;
   display: block !important;
 }
+
+body .text-limited {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* div .text-limited:hover {
+  overflow: visible;
+} */

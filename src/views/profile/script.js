@@ -3,6 +3,9 @@ import FloatLabel from "primevue/floatlabel";
 import Select from 'primevue/select';
 import ProfileService from '@/utils/services/ProfileService';
 
+import Country from '@/utils/json/countries.json';
+import Province from '@/utils/json/province.json';
+
 export default {
   name: "Profle",
   data() {
@@ -27,7 +30,12 @@ export default {
         { name: 'Male', code: 'male' },
         { name: 'Female', code: 'female' }
       ],
-      genderSelected: null
+      countries: Country,
+      province: Province,
+
+      selectedGender: null,
+      selectedCity: null,
+      selectedProvince: null
     };
   },
   components: {
@@ -42,11 +50,19 @@ export default {
     getProfile() {
       ProfileService.getProfile().then((res)=>{
         if(res.status === 200) {
+          if(!res.data.data) {
+            this.$router.push({ name: 'login' }); // or this.$router.push('/login');
+            return;
+          }
+
           this.obj = {
             ...this.obj, 
             ...res.data.data 
           };
-          this.genderSelected = this.genderOption.find(g => g.code === this.obj.gender);
+          console.log(this.obj)
+          this.selectedGender = this.genderOption.find(g => g.code === this.obj.gender);
+          this.selectedCity = this.countries.find(c => c.name === this.obj.country);
+          this.selectedProvince = this.province.find(c => c.name === this.obj.city);
         }else {
           console.log("Service not found")
         }

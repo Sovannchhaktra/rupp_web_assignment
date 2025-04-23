@@ -32,11 +32,11 @@
             <div class="mb-4">
                 <h2 class="text-lg font-semibold mb-2 text-black">{{$t('shopPrice')}}</h2>
                 <div v-if="data.sale_price != '0.00'" class="ml-5">
-                    <p class="text-danger line-through text-lg text-red-500">{{data.regular_price}} (USD)</p>
-                    <p class="text-green-600 text-lg mt-1">{{data.sale_price}} (USD)</p>
+                    <p class="text-danger line-through text-lg text-red-500">{{data.regular_price}} USD</p>
+                    <p class="text-green-600 text-lg mt-1">{{data.sale_price}} USD</p>
                 </div>
                 <div v-else class="ml-5">
-                    <p class="text-green-600 text-lg mt-1">{{data.regular_price}} (USD)</p>
+                    <p class="text-green-600 text-lg mt-1">{{data.regular_price}} USD</p>
                 </div>
             </div>
 

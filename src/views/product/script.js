@@ -6,6 +6,7 @@ export default {
     name: "Products",
     data() {
         return {
+            searchQuery: '',
             data: [],
             numRecord: 10,
             pFirst: 0,
@@ -26,9 +27,13 @@ export default {
             this.pFirst = event.first;
             this.numRecord = event.rows;
         },
-        getList() {
+        getList(searchParam) {
             this.isLoading = true;
-            ProductsService.getList().then((res)=>{
+            let params = {};
+            if (searchParam) {
+              params.search = searchParam;
+            }
+            ProductsService.getList(params).then((res)=>{
               this.isLoading = false;
               if(res.status === 200) {
                 this.data = res.data.data;
@@ -39,6 +44,10 @@ export default {
             }).catch((error) => {
               this.isLoading = false;
             });
-        }
+        },
+        
+        handleSearch() {
+          this.getList(this.searchQuery);
+        },
     }
 }
