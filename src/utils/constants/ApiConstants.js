@@ -11,6 +11,7 @@ const ApiContant = {
     country: baseUrl + type + "/countries",
     register: baseUrl + type + "/register",
     login: baseUrl + type + "/login",
+    profile: baseUrl + type + "/me",
 }
 
 export default ApiContant;

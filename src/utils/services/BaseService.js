@@ -2,7 +2,7 @@
 const BaseService = {}
 
 BaseService.headers = function () {
-    let accessToken = sessionStorage.getItem("accessToken");
+    let accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
       let header = {
         headers: {
@@ -19,7 +19,7 @@ BaseService.headers = function () {
 BaseService.logout = function () {
     sessionStorage.clear();
     localStorage.clear();
-    location.reload();
+    // location.reload();
 };
   
 export default BaseService;

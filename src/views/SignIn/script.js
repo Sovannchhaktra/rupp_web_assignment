@@ -60,11 +60,12 @@ export default {
       this.isSubmited = true;
       LoginService.login(body).then((res)=>{
         this.isSubmited = false;
+        this.visible = true;
         if(res.status === 200) {
-          this.visible = true;
           this.onClear();
-          sessionStorage.setItem("accessToken", res.data.acessToken);
-          localStorage.setItem("accessToken", res.data.acessToken)
+          const token = res.data.acessToken;
+          sessionStorage.setItem("accessToken", token);
+          localStorage.setItem("accessToken", token);
           setTimeout(() => {
             this.visible = false;
           }, 3000);

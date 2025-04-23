@@ -69,7 +69,7 @@
             <FloatLabel variant="on">
               <InputText 
               id="on_label" 
-              v-model="value3" 
+              v-model="obj.first_name" 
               class="w-full bg-white"
               :disabled="isFormDisabled"
                />
@@ -81,20 +81,20 @@
           <span class="pt-4 pr-3">
             <FloatLabel variant="on">
               <InputText 
-              id="on_label" 
-              v-model="value3" 
+              id="last_name" 
+              v-model="obj.last_name" 
               class="w-full bg-white"
               :disabled="isFormDisabled"
                />
-              <label for="on_label">{{$t('lastName')}}<span class="text-red-600">*</span></label>
+              <label for="last_name">{{$t('lastName')}}<span class="text-red-600">*</span></label>
           </FloatLabel>
           </span>
         </div>
         <div class="grid mb-3">
           <span class="pt-4 pr-3">
             <Select 
-            v-model="selectedCity" 
-            :options="cities" 
+            v-model="genderSelected" 
+            :options="genderOption" 
             optionLabel="name" 
             :disabled="isFormDisabled"
             :placeholder="$t('selectGender')" 
@@ -105,12 +105,12 @@
           <span class="pt-4 pr-3">
             <FloatLabel variant="on">
               <InputText 
-              id="on_label" 
-              v-model="value3" 
+              id="email" 
+              v-model="obj.email" 
               class="w-full bg-white"
               :disabled="isFormDisabled"
                />
-              <label for="on_label">{{$t('email')}}<span class="text-red-600">*</span></label>
+              <label for="email">{{$t('email')}}<span class="text-red-600">*</span></label>
           </FloatLabel>
           </span>
         </div>
