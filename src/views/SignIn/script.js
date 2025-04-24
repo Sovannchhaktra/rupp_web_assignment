@@ -10,6 +10,7 @@ export default {
 
   data() {
     return {
+      errTitle: '',
       errMessage: '',
       errCode: '',
       isSubmited: false,
@@ -60,8 +61,9 @@ export default {
       this.isSubmited = true;
       LoginService.login(body).then((res)=>{
         this.isSubmited = false;
-        this.visible = true;
         if(res.status === 200) {
+          this.errTitle = "Login Successfully";
+          this.visible = true;
           this.onClear();
           const token = res.data.acessToken;
           sessionStorage.setItem("accessToken", token);
@@ -71,8 +73,11 @@ export default {
           }, 3000);
         }else {
            console.log("Service not found")
+           this.visible = false;
         }
       }).catch((error) => {
+        this.errTitle = 'Wrong Credential';
+        this.visible = true;
         this.isLoading = false;
         this.isSubmited = false;
       });     
