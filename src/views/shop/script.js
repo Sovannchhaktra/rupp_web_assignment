@@ -5,22 +5,17 @@ export default {
     data() {  
       return {  
         star: 5,
+        searchQuery: '',
         numRecord: 10,
         pFirst: 0,
-        objs: { total: 100 },
+        objs: { 
+          newPro: [],
+          related: [],
+          total: 100 
+        },
         pageOptions: [10, 25, 50, 100],
-        categories: [],
-        newProducts: [  
-          { id: 1, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
-          { id: 2, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
-          { id: 3, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
-        ],  
-        relatedProducts: [  
-          { id: 1, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
-          { id: 2, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
-          { id: 3, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
-          { id: 4, image:"https://placehold.jp/350x450.png", originalPrice: 40, salePrice: 30, name: 'T-Shirt', rating: 5 },  
-        ],  
+        categories: [], 
+        
       };  
     }, 
     created() {
@@ -39,10 +34,29 @@ export default {
       getCategoryOption() {
         this.isLoading = true;
           ShopService.getCategory().then((res)=>{
+          this.isLoading = false;
+          if(res.status === 200) {
+            this.categories = res.data.data;
+          }else {
+            console.log("Service not found")
+          }
+        }).catch((error) => {
+          this.isLoading = false;
+        });
+      },
+      getList(searchParam) {
+          this.isLoading = true;
+          let params = {};
+          if (searchParam) {
+            params.search = searchParam;
+          }
+          console.log(params)
+          ShopService.getList(params).then((res)=>{
             this.isLoading = false;
             if(res.status === 200) {
-              this.categories = res.data.data;
-              console.log(this.categories)
+              const data = res.data.data;
+              this.objs.newPro = data.latest || [];
+              this.objs.related = data.related || [];
             }else {
               console.log("Service not found")
             }
@@ -50,20 +64,9 @@ export default {
             this.isLoading = false;
           });
       },
-      getList() {
-          this.isLoading = true;
-          ShopService.getList().then((res)=>{
-            this.isLoading = false;
-            if(res.status === 200) {
-              this.data = res.data.data;
-              console.log(this.data)
-            }else {
-              console.log("Service not found")
-            }
-          }).catch((error) => {
-            this.isLoading = false;
-          });
-      }
+      handleSearch(value) {
+        this.getList(this.searchQuery = value);
+      },
     },
     props: {  
       product: {  

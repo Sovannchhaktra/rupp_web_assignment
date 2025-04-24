@@ -7,7 +7,7 @@ const ApiContant = {
     advertisement: baseUrl + type + "/advertisements",
     productsType: baseUrl + type + "/product",
     productsDetail: baseUrl + type + "/products",
-    shop: baseUrl + type + "/product",
+    shop: baseUrl + type + "/product/shop",
     category: baseUrl + type + "/category",
     country: baseUrl + type + "/countries",
     register: baseUrl + type + "/register",
